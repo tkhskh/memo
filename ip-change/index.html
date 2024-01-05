@@ -255,25 +255,19 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     反映
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#dhcp" class="md-nav__link">
     参考 元ファイル(DHCP)
   </a>
   
-    <nav class="md-nav" aria-label="参考 元ファイル(DHCP)">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
@@ -372,25 +366,19 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     反映
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#dhcp" class="md-nav__link">
     参考 元ファイル(DHCP)
   </a>
   
-    <nav class="md-nav" aria-label="参考 元ファイル(DHCP)">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
@@ -448,11 +436,12 @@
         via: 192.168.0.1
   version: 2
 </code></pre>
-<h2 id="_4">反映</h2>
+<h3 id="_4">反映</h3>
 <pre><code>netplan apply
 </code></pre>
-<h2 id="dhcp">参考 元ファイル(DHCP)</h2>
-<p>cat /etc/netplan/00-installer-config.yaml.bak</p>
+<h3 id="dhcp">参考 元ファイル(DHCP)</h3>
+<pre><code>cat /etc/netplan/00-installer-config.yaml.bak
+</code></pre>
 <pre><code>#This is the network config written by 'subiquity'
 network:
   ethernets:
