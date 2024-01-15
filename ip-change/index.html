@@ -231,18 +231,45 @@
     設定
   </a>
   
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etcnetplan" class="md-nav__link">
+    /etc/netplan に設定ファイルがある
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ファイル編集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    内容
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     反映
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    元
+  <a href="#dhcp" class="md-nav__link">
+    参考 元ファイル(DHCP)
   </a>
   
 </li>
@@ -301,18 +328,45 @@
     設定
   </a>
   
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etcnetplan" class="md-nav__link">
+    /etc/netplan に設定ファイルがある
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ファイル編集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    内容
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     反映
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    元
+  <a href="#dhcp" class="md-nav__link">
+    参考 元ファイル(DHCP)
   </a>
   
 </li>
@@ -333,8 +387,13 @@
 
 <h1 id="ubuntu-ip">Ubuntu IP変更</h1>
 <h2 id="_1">設定</h2>
-<p>cd /etc/netplan
-vi 00-installer-config.yaml</p>
+<h3 id="etcnetplan">/etc/netplan に設定ファイルがある</h3>
+<pre><code>cd /etc/netplan
+</code></pre>
+<h3 id="_2">ファイル編集</h3>
+<pre><code>vi 00-installer-config.yaml
+</code></pre>
+<h3 id="_3">内容</h3>
 <pre><code>network:
   ethernets:
     ens34:
@@ -349,9 +408,10 @@ vi 00-installer-config.yaml</p>
         via: 192.168.0.1
   version: 2
 </code></pre>
-<h2 id="_2">反映</h2>
-<p>netplan apply</p>
-<h2 id="_3">元</h2>
+<h2 id="_4">反映</h2>
+<pre><code>netplan apply
+</code></pre>
+<h2 id="dhcp">参考 元ファイル(DHCP)</h2>
 <p>cat /etc/netplan/00-installer-config.yaml.bak</p>
 <pre><code>#This is the network config written by 'subiquity'
 network:
@@ -360,9 +420,7 @@ network:
       dhcp4: true
    version: 2
 </code></pre>
-<p><a href="https://amzn.to/42xtmuB">Amazon.co.jp: Ubuntuサーバー徹底入門 eBook : 中島 能和: 本</a>
-<a href="https://amzn.to/48hnPcG">amazon1</a></p>
-<p><a target="_blank" href="https://www.amazon.co.jp/b?_encoding=UTF8&tag=koheicom-22&linkCode=ur2&linkId=17ff9b9d36ca27d34e0b1baf78831a7b&camp=247&creative=1211&node=637392">PCソフト amazon</a></p>
+<p><a href="https://amzn.to/42xtmuB">Amazon.co.jp: Ubuntuサーバー徹底入門 eBook : 中島 能和: 本</a></p>
 
               
             </article>
