@@ -1,38 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
          <loc>https://memo.ko-hei.net/</loc>
          <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://memo.ko-hei.net/ja/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://memo.ko-hei.net/en/"/>
+         
     </url>
     <url>
          <loc>https://memo.ko-hei.net/about/</loc>
          <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://memo.ko-hei.net/ja/about/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://memo.ko-hei.net/en/about/"/>
+         
     </url>
     <url>
          <loc>https://memo.ko-hei.net/ip-change-1/</loc>
          <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://memo.ko-hei.net/ja/ip-change-1/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://memo.ko-hei.net/en/ip-change-1/"/>
+         
     </url>
     <url>
          <loc>https://memo.ko-hei.net/ip-change-2/</loc>
          <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://memo.ko-hei.net/ja/ip-change-2/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://memo.ko-hei.net/en/ip-change-2/"/>
+         
     </url>
     <url>
          <loc>https://memo.ko-hei.net/mkdocs/</loc>
          <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://memo.ko-hei.net/ja/mkdocs/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://memo.ko-hei.net/en/mkdocs/"/>
+         
     </url>
     <url>
          <loc>https://memo.ko-hei.net/raspi-co2/</loc>
          <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://memo.ko-hei.net/ja/raspi-co2/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://memo.ko-hei.net/en/raspi-co2/"/>
+         
     </url>
     <url>
          <loc>https://memo.ko-hei.net/zabbix-vmware/</loc>
          <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://memo.ko-hei.net/ja/zabbix-vmware/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://memo.ko-hei.net/en/zabbix-vmware/"/>
+         
     </url>
 </urlset>
