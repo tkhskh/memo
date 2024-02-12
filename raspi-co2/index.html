@@ -194,7 +194,7 @@
   
     <li class="md-nav__item">
       <a href="../ip-change-1/" class="md-nav__link">
-        IP変更 ip,ifconfig
+        IP変更 (ip,ifconfig)
       </a>
     </li>
   
@@ -293,7 +293,28 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    温度がとれる
+    二酸化炭素がとれる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    温度もとれるっぽい
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    広告
   </a>
   
 </li>
@@ -399,7 +420,28 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    温度がとれる
+    二酸化炭素がとれる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    温度もとれるっぽい
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    広告
   </a>
   
 </li>
@@ -450,13 +492,22 @@ pip install --break-system-packages --user mh_z19
 python -m mh_z19
 </code></pre>
 <h3 id="_3">接続</h3>
-<p>mh_z19図
-接続図</p>
-<h3 id="_4">温度がとれる</h3>
+<p><img alt="mh_z19図" src="../img/mh_z19.jpg" /><br />
+<img alt="接続図" src="../img/raspi-co2.jpg" />  </p>
+<h3 id="_4">二酸化炭素がとれる</h3>
+<pre><code>pi@raspberrypi:~ $ sudo python -m mh_z19
+{&quot;co2&quot;: 593}
+pi@raspberrypi:~ $
+</code></pre>
+<h3 id="_5">温度もとれるっぽい</h3>
 <pre><code>pi@raspberrypi:~ $ sudo python -m mh_z19 --all
 {&quot;co2&quot;: 402, &quot;temperature&quot;: 26, &quot;TT&quot;: 66, &quot;SS&quot;: 0, &quot;UhUl&quot;: 13568}
 pi@raspberrypi:~ $
 </code></pre>
+<h3 id="_6">参考</h3>
+<p><a href="https://github.com/UedaTakeyuki/mh-z19">https://github.com/UedaTakeyuki/mh-z19</a></p>
+<h3 id="_7">広告</h3>
+<p><a href="https://amzn.to/3uttD5c">Amazon.co.jp : mh-z19</a></p>
 
               
             </article>
