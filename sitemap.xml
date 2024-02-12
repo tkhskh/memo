@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://memo.ko-hei.net/firewalld/</loc>
+         <lastmod>2024-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://memo.ko-hei.net/index.en/</loc>
          <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>

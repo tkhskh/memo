@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://memo.ko-hei.net/ip-change-1/">
+        <link rel="canonical" href="https://memo.ko-hei.net/firewalld/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../ip-change-2/">
       
       
-        <link rel="next" href="../ip-change-2/">
+        <link rel="next" href="../raspi-co2/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>IP変更 (ip,ifconfig) - memo blog</title>
+        <title>firewalldメモ - memo blog</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ip-ipifconfig" class="md-skip">
+        <a href="#firewalld" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IP変更 (ip,ifconfig)
+              firewalldメモ
             
           </span>
         </div>
@@ -210,30 +210,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    IP変更 (ip,ifconfig)
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ip-change-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -242,77 +222,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      設定
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="設定">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPアドレス 一時的に変更
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ip_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPアドレス 恒久的に変更
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      参考
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      広告
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -341,10 +250,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../firewalld/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    firewalldメモ
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -353,6 +282,179 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      確認
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="確認">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      状態確認
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      すべてのゾーン確認
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      特定のゾーンを確認
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      サービス名一覧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      サービス名での確認
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      設定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      追加
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      ポート追加
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      削除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      ポート削除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      反映
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      特定のIPだけ許可(リッチルール)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="特定のIPだけ許可(リッチルール)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      サービスをゾーンから削除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      許可したIPポートを設定
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -466,35 +568,17 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      設定
+      確認
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="設定">
+    <nav class="md-nav" aria-label="確認">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPアドレス 一時的に変更
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ip_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      IPアドレス 恒久的に変更
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      参考
+      状態確認
     </span>
   </a>
   
@@ -503,7 +587,127 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      広告
+      すべてのゾーン確認
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      特定のゾーンを確認
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      サービス名一覧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      サービス名での確認
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      設定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      追加
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      ポート追加
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      削除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      ポート削除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      反映
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      特定のIPだけ許可(リッチルール)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="特定のIPだけ許可(リッチルール)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      サービスをゾーンから削除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      許可したIPポートを設定
     </span>
   </a>
   
@@ -529,35 +733,49 @@
                   
 
 
-<h1 id="ip-ipifconfig">IP変更 (ip,ifconfig)</h1>
-<h2 id="_1">設定</h2>
-<h3 id="ip">IPアドレス 一時的に変更</h3>
-<pre><code>ip a add 192.168.0.10/255.255.255.0 dev eth0
-ip link set eth0 up
-ip r add 192.168.0.10/255.255.255.0 metric 10 via 192.168.0.1 dev eth0
+<h1 id="firewalld">firewalldメモ</h1>
+<h2 id="_1">確認</h2>
+<h3 id="_2">状態確認</h3>
+<pre><code>firewall-cmd --state
 </code></pre>
-<h3 id="ip_1">IPアドレス 恒久的に変更</h3>
-<p>/etc/sysconfig/network-scripts に設定ファイルがある</p>
-<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-eth0
+<h3 id="_3">すべてのゾーン確認</h3>
+<pre><code>firewall-cmd --list-all
 </code></pre>
-<pre><code>DEVICE=&quot;eth0&quot;
-BOOTPROTO=none
-NM_CONTROLLED=&quot;no&quot;
-PERSISTENT_DHCLIENT=1
-ONBOOT=&quot;yes&quot;
-TYPE=Ethernet
-IPV4_FAILURE_FATAL=yes
-NAME=&quot;eth0&quot;
-IPADDR=192.168.0.10
-PREFIX=24
-PEERDNS=no
-DNS1=192.168.0.1
-DEFROUTE=yes
-GATEWAY=192.168.0.1
+<h3 id="_4">特定のゾーンを確認</h3>
+<pre><code>firewall-cmd --list-all --zone=ゾーン名
 </code></pre>
-<h3 id="_2">参考</h3>
-<h3 id="_3">広告</h3>
-<p><a href="https://amzn.to/4bCA0Uz">Amazon.co.jp: Ubuntuサーバー徹底入門 eBook : 中島 能和: 本</a></p>
+<h3 id="_5">サービス名一覧</h3>
+<pre><code>firewall-cmd --get-services
+</code></pre>
+<h3 id="_6">サービス名での確認</h3>
+<pre><code>firewall-cmd --info-service=pop3
+</code></pre>
+<h2 id="_7">設定</h2>
+<h3 id="_8">追加</h3>
+<p>firewall-cmd --zone=ゾーン名 --add-service=サービス名 -permanent  </p>
+<pre><code>firewall-cmd --zone=public --add-service=pop3 --permanent 
+</code></pre>
+<h3 id="_9">ポート追加</h3>
+<pre><code>firewall-cmd --add-port=10000/tcp --zone=public --permanent
+</code></pre>
+<h3 id="_10">削除</h3>
+<p>firewall-cmd --zone=ゾーン名 --remove-service=サービス名 --permanent  </p>
+<pre><code>firewall-cmd --zone=public --remove-service=pop3
+</code></pre>
+<h3 id="_11">ポート削除</h3>
+<pre><code>firewall-cmd --remove-port=10000/tcp --zone=public --permanent
+</code></pre>
+<h3 id="_12">反映</h3>
+<pre><code>firewall-cmd --reload
+</code></pre>
+<h2 id="ip">特定のIPだけ許可(リッチルール)</h2>
+<h3 id="_13">サービスをゾーンから削除</h3>
+<pre><code>firewall-cmd --permanent --remove-service=サービス名
+</code></pre>
+<h3 id="ip_1">許可したIPポートを設定</h3>
+<p>firewall-cmd --permanent --zone=ゾーン名 --add-rich-rule="rule family="ipv4" source address="許可するIPアドレス" port protocol="tcp" port="ポート番号" accept"  </p>
+<pre><code>firewall-cmd --permanent --zone=public --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;27.94.240.161/32&quot; port protocol=&quot;tcp&quot; port=&quot;2222&quot; accept&quot;
+</code></pre>
 
 
 
