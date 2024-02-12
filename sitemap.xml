@@ -11,6 +11,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://memo.ko-hei.net/esxi-gui-timeout/</loc>
+         <lastmod>2024-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://memo.ko-hei.net/esxi-media-min/</loc>
+         <lastmod>2024-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://memo.ko-hei.net/esxi-snmp/</loc>
+         <lastmod>2024-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://memo.ko-hei.net/firewalld/</loc>
          <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>

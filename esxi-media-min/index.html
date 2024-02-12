@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://memo.ko-hei.net/index.en/">
+        <link rel="canonical" href="https://memo.ko-hei.net/esxi-media-min/">
       
       <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
     
     
       
-        <title>index - memo blog</title>
+        <title>ESXi OS領域を小さくインストールする - memo blog</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#index" class="md-skip">
+        <a href="#esxi-os" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              index
+              ESXi OS領域を小さくインストールする
             
           </span>
         </div>
@@ -268,11 +268,66 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../esxi-media-min/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ESXi OS領域を小さくインストールする
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ESXi OS領域を小さくインストールする
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shift-o" class="md-nav__link">
+    インストール時に、Shift ＋ O
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runewasel-cdromboot" class="md-nav__link">
+    runewasel cdromBoot の後ろに
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -364,8 +419,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
+  <a href="#shift-o" class="md-nav__link">
+    インストール時に、Shift ＋ O
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runewasel-cdromboot" class="md-nav__link">
+    runewasel cdromBoot の後ろに
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考
   </a>
   
 </li>
@@ -384,15 +453,14 @@
                 
 
 
-<h1 id="index">index</h1>
-<p>memo</p>
-<h2 id="linux">Linux</h2>
-<p><a href="../ip-change-1/">IP change (ip,ifconfig)</a><br />
-<a href="../ip-change-2/">IP change (netplan)</a><br />
-<a href="../raspi-co2/">raspi でCO2をはかる</a><br />
-<a href="../zabbix-vmware/">ZABBIX構築(VMware)</a><br />
-<a href="../mkdocs/">mkdocs</a>  </p>
-<p><a href="https://www.mkdocs.org/">https://www.mkdocs.org/</a>  </p>
+<h1 id="esxi-os">ESXi OS領域を小さくインストールする</h1>
+<h3 id="shift-o">インストール時に、Shift ＋ O</h3>
+<h3 id="runewasel-cdromboot">runewasel cdromBoot の後ろに</h3>
+<p><div class="highlight"><pre><span></span><code>systemMediaSize=min
+</code></pre></div>
+を入力しインストール</p>
+<h3 id="_1">参考</h3>
+<p><a href="https://kb.vmware.com/s/article/81166">https://kb.vmware.com/s/article/81166</a></p>
 
               
             </article>
@@ -402,6 +470,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../zabbix-vmware/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ZABBIX構築 VMware版" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              ZABBIX構築 VMware版
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../esxi-snmp/" class="md-footer__link md-footer__link--next" aria-label="Next: ESXi snmp 設定" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              ESXi snmp 設定
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
