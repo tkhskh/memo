@@ -10,15 +10,8 @@
       
         <link rel="canonical" href="https://memo.ko-hei.net/firewalld/">
       
-      
-        <link rel="prev" href="../ip-change-2/">
-      
-      
-        <link rel="next" href="../raspi-co2/">
-      
-      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
     
     
       
@@ -26,14 +19,13 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
       
-
-
     
-    
-      
     
     
       
@@ -45,18 +37,23 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-    
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
+    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -76,9 +73,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://memo.ko-hei.net" title="memo blog" class="md-header__button md-logo" aria-label="memo blog" data-md-component="logo">
       
@@ -87,7 +82,6 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
@@ -108,12 +102,8 @@
     </div>
     
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
     
       <label class="md-header__button md-icon" for="__search">
-        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
@@ -122,15 +112,12 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -142,7 +129,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list"></ol>
         </div>
       </div>
     </div>
@@ -172,7 +159,6 @@
                     
 
 
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://memo.ko-hei.net" title="memo blog" class="md-nav__button md-logo" aria-label="memo blog" data-md-component="logo">
@@ -188,19 +174,14 @@
     
       
       
-  
+      
+
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    index
-  </span>
-  
-
+        index
       </a>
     </li>
   
@@ -208,79 +189,84 @@
     
       
       
+      
+
   
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
   
   
   
     <li class="md-nav__item">
       <a href="../ip-change-1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    IP変更 (ip,ifconfig)
-  </span>
-  
-
+        IP変更 (ip,ifconfig)
       </a>
     </li>
   
 
-    
-      
-      
-  
+            
+          
+            
+              
   
   
   
     <li class="md-nav__item">
       <a href="../ip-change-2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    IP変更 (netplan,ubuntu)
-  </span>
-  
-
+        IP変更 (netplan,ubuntu)
       </a>
     </li>
   
 
-    
-      
-      
+            
+          
+            
+              
   
   
     
-  
   
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    firewalldメモ
-  </span>
-  
-
+          firewalldメモ
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    firewalldメモ
-  </span>
-  
-
+        firewalldメモ
       </a>
       
         
@@ -300,9 +286,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      確認
-    </span>
+    確認
   </a>
   
     <nav class="md-nav" aria-label="確認">
@@ -310,45 +294,35 @@
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      状態確認
-    </span>
+    状態確認
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      すべてのゾーン確認
-    </span>
+    すべてのゾーン確認
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      特定のゾーンを確認
-    </span>
+    特定のゾーンを確認
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      サービス名一覧
-    </span>
+    サービス名一覧
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      サービス名での確認
-    </span>
+    サービス名での確認
   </a>
   
 </li>
@@ -360,9 +334,7 @@
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      設定
-    </span>
+    設定
   </a>
   
     <nav class="md-nav" aria-label="設定">
@@ -370,45 +342,35 @@
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      追加
-    </span>
+    追加
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      ポート追加
-    </span>
+    ポート追加
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      削除
-    </span>
+    削除
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      ポート削除
-    </span>
+    ポート削除
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      反映
-    </span>
+    反映
   </a>
   
 </li>
@@ -420,9 +382,7 @@
       
         <li class="md-nav__item">
   <a href="#ip" class="md-nav__link">
-    <span class="md-ellipsis">
-      特定のIPだけ許可(リッチルール)
-    </span>
+    特定のIPだけ許可(リッチルール)
   </a>
   
     <nav class="md-nav" aria-label="特定のIPだけ許可(リッチルール)">
@@ -430,18 +390,14 @@
         
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      サービスをゾーンから削除
-    </span>
+    サービスをゾーンから削除
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#ip_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      許可したIPポートを設定
-    </span>
+    許可したIPポートを設定
   </a>
   
 </li>
@@ -458,83 +414,100 @@
     </li>
   
 
-    
-      
-      
-  
+            
+          
+            
+              
   
   
   
     <li class="md-nav__item">
       <a href="../raspi-co2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ラズパイでCO2をはかる
-  </span>
-  
-
+        ラズパイでCO2をはかる
       </a>
     </li>
   
 
-    
-      
-      
-  
+            
+          
+            
+              
   
   
   
     <li class="md-nav__item">
       <a href="../zabbix-vmware/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ZABBIX構築 VMware版
-  </span>
+        ZABBIX構築 VMware版
+      </a>
+    </li>
   
 
-      </a>
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
     
       
       
+      
+
   
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
   
   
   
     <li class="md-nav__item">
       <a href="../mkdocs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Welcome to MkDocs
-  </span>
-  
-
+        Welcome to MkDocs
       </a>
     </li>
   
 
-    
-      
-      
-  
+            
+          
+            
+              
   
   
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    about
-  </span>
+        about
+      </a>
+    </li>
   
 
-      </a>
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -567,9 +540,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      確認
-    </span>
+    確認
   </a>
   
     <nav class="md-nav" aria-label="確認">
@@ -577,45 +548,35 @@
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      状態確認
-    </span>
+    状態確認
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      すべてのゾーン確認
-    </span>
+    すべてのゾーン確認
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      特定のゾーンを確認
-    </span>
+    特定のゾーンを確認
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      サービス名一覧
-    </span>
+    サービス名一覧
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      サービス名での確認
-    </span>
+    サービス名での確認
   </a>
   
 </li>
@@ -627,9 +588,7 @@
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      設定
-    </span>
+    設定
   </a>
   
     <nav class="md-nav" aria-label="設定">
@@ -637,45 +596,35 @@
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      追加
-    </span>
+    追加
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      ポート追加
-    </span>
+    ポート追加
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      削除
-    </span>
+    削除
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      ポート削除
-    </span>
+    ポート削除
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      反映
-    </span>
+    反映
   </a>
   
 </li>
@@ -687,9 +636,7 @@
       
         <li class="md-nav__item">
   <a href="#ip" class="md-nav__link">
-    <span class="md-ellipsis">
-      特定のIPだけ許可(リッチルール)
-    </span>
+    特定のIPだけ許可(リッチルール)
   </a>
   
     <nav class="md-nav" aria-label="特定のIPだけ許可(リッチルール)">
@@ -697,18 +644,14 @@
         
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      サービスをゾーンから削除
-    </span>
+    サービスをゾーンから削除
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#ip_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      許可したIPポートを設定
-    </span>
+    許可したIPポートを設定
   </a>
   
 </li>
@@ -726,79 +669,99 @@
               </div>
             
           
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
                 
-                  
 
 
 <h1 id="firewalld">firewalldメモ</h1>
 <h2 id="_1">確認</h2>
 <h3 id="_2">状態確認</h3>
-<pre><code>firewall-cmd --state
-</code></pre>
+<div class="highlight"><pre><span></span><code>firewall-cmd --state
+</code></pre></div>
 <h3 id="_3">すべてのゾーン確認</h3>
-<pre><code>firewall-cmd --list-all
-</code></pre>
+<div class="highlight"><pre><span></span><code>firewall-cmd --list-all
+</code></pre></div>
 <h3 id="_4">特定のゾーンを確認</h3>
-<pre><code>firewall-cmd --list-all --zone=ゾーン名
-</code></pre>
+<div class="highlight"><pre><span></span><code>firewall-cmd --list-all --zone=ゾーン名
+</code></pre></div>
 <h3 id="_5">サービス名一覧</h3>
-<pre><code>firewall-cmd --get-services
-</code></pre>
+<div class="highlight"><pre><span></span><code>firewall-cmd --get-services
+</code></pre></div>
 <h3 id="_6">サービス名での確認</h3>
-<pre><code>firewall-cmd --info-service=pop3
-</code></pre>
+<div class="highlight"><pre><span></span><code>firewall-cmd --info-service=pop3
+</code></pre></div>
 <h2 id="_7">設定</h2>
 <h3 id="_8">追加</h3>
-<p>firewall-cmd --zone=ゾーン名 --add-service=サービス名 -permanent  </p>
-<pre><code>firewall-cmd --zone=public --add-service=pop3 --permanent 
-</code></pre>
+<p>firewall-cmd --zone=ゾーン名 --add-service=サービス名 -permanent<br />
+<div class="highlight"><pre><span></span><code>firewall-cmd --zone=public --add-service=pop3 --permanent 
+</code></pre></div></p>
 <h3 id="_9">ポート追加</h3>
-<pre><code>firewall-cmd --add-port=10000/tcp --zone=public --permanent
-</code></pre>
+<div class="highlight"><pre><span></span><code>firewall-cmd --add-port=10000/tcp --zone=public --permanent
+</code></pre></div>
 <h3 id="_10">削除</h3>
-<p>firewall-cmd --zone=ゾーン名 --remove-service=サービス名 --permanent  </p>
-<pre><code>firewall-cmd --zone=public --remove-service=pop3
-</code></pre>
+<p>firewall-cmd --zone=ゾーン名 --remove-service=サービス名 --permanent<br />
+<div class="highlight"><pre><span></span><code>firewall-cmd --zone=public --remove-service=pop3
+</code></pre></div></p>
 <h3 id="_11">ポート削除</h3>
-<pre><code>firewall-cmd --remove-port=10000/tcp --zone=public --permanent
-</code></pre>
+<div class="highlight"><pre><span></span><code>firewall-cmd --remove-port=10000/tcp --zone=public --permanent
+</code></pre></div>
 <h3 id="_12">反映</h3>
-<pre><code>firewall-cmd --reload
-</code></pre>
+<div class="highlight"><pre><span></span><code>firewall-cmd --reload
+</code></pre></div>
 <h2 id="ip">特定のIPだけ許可(リッチルール)</h2>
 <h3 id="_13">サービスをゾーンから削除</h3>
-<pre><code>firewall-cmd --permanent --remove-service=サービス名
-</code></pre>
+<div class="highlight"><pre><span></span><code>firewall-cmd --permanent --remove-service=サービス名
+</code></pre></div>
 <h3 id="ip_1">許可したIPポートを設定</h3>
-<p>firewall-cmd --permanent --zone=ゾーン名 --add-rich-rule="rule family="ipv4" source address="許可するIPアドレス" port protocol="tcp" port="ポート番号" accept"  </p>
-<pre><code>firewall-cmd --permanent --zone=public --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;27.94.240.161/32&quot; port protocol=&quot;tcp&quot; port=&quot;2222&quot; accept&quot;
-</code></pre>
+<p>firewall-cmd --permanent --zone=ゾーン名 --add-rich-rule="rule family="ipv4" source address="許可するIPアドレス" port protocol="tcp" port="ポート番号" accept"<br />
+<div class="highlight"><pre><span></span><code>firewall-cmd --permanent --zone=public --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;27.94.240.161/32&quot; port protocol=&quot;tcp&quot; port=&quot;2222&quot; accept&quot;
+</code></pre></div></p>
 
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+              
+            </article>
+          </div>
         </div>
         
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../ip-change-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IP変更 (netplan,ubuntu)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              IP変更 (netplan,ubuntu)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../raspi-co2/" class="md-footer__link md-footer__link--next" aria-label="Next: ラズパイでCO2をはかる" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              ラズパイでCO2をはかる
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -820,12 +783,14 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-    
-    
-      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="../js/open-new-tab.js"></script>
+      
+        <script src="../js/open-menu.js"></script>
       
     
   </body>
