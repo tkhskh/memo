@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://memo.ko-hei.net/esxi-media-min/">
+        <link rel="canonical" href="https://memo.ko-hei.net/ip-change-3/">
       
       <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
     
     
       
-        <title>ESXi OS領域を小さくインストールする - memo blog</title>
+        <title>IP変更 (nmcli) - memo blog</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#esxi-os" class="md-skip">
+        <a href="#ip-nmcli" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ESXi OS領域を小さくインストールする
+              IP変更 (nmcli)
             
           </span>
         </div>
@@ -233,11 +233,107 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../ip-change-3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          IP変更 (nmcli)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         IP変更 (nmcli)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nmcli" class="md-nav__link">
+    nmcli コマンド
+  </a>
+  
+    <nav class="md-nav" aria-label="nmcli コマンド">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    設定名確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    IPアドレス設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    デフォルトゲートウェイ設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    DNS 設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    確認
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    広告
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -293,73 +389,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          ESXi OS領域を小さくインストールする
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../esxi-media-min/" class="md-nav__link">
         ESXi OS領域を小さくインストールする
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#shift-o" class="md-nav__link">
-    インストール時に、Shift ＋ O
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#runewasel-cdromboot" class="md-nav__link">
-    runewasel cdromBoot の後ろに
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    参考
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    広告
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -451,28 +485,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#shift-o" class="md-nav__link">
-    インストール時に、Shift ＋ O
+  <a href="#nmcli" class="md-nav__link">
+    nmcli コマンド
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#runewasel-cdromboot" class="md-nav__link">
-    runewasel cdromBoot の後ろに
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="nmcli コマンド">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    設定名確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    IPアドレス設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    デフォルトゲートウェイ設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    DNS 設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    確認
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     参考
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     広告
   </a>
   
@@ -492,16 +560,46 @@
                 
 
 
-<h1 id="esxi-os">ESXi OS領域を小さくインストールする</h1>
-<h3 id="shift-o">インストール時に、Shift ＋ O</h3>
-<h3 id="runewasel-cdromboot">runewasel cdromBoot の後ろに</h3>
-<p><div class="highlight"><pre><span></span><code>systemMediaSize=min
+<h1 id="ip-nmcli">IP変更 (nmcli)</h1>
+<h3 id="nmcli">nmcli コマンド</h3>
+<h4 id="_1">設定名確認</h4>
+<p><div class="highlight"><pre><span></span><code>nmcli c
 </code></pre></div>
-を入力しインストール</p>
-<h3 id="_1">参考</h3>
-<p><a href="https://kb.vmware.com/s/article/81166">https://kb.vmware.com/s/article/81166</a></p>
-<h3 id="_2">広告</h3>
-<p><a href="https://jp.mercari.com/search?afid=2799704686&amp;keyword=vSphere7+%E3%82%A4%E3%83%B3%E3%83%86%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89&amp;status=on_sale">メルカリ：vSphere7 インテグレーションガイド</a> <div style="background:#fff;width:120px;height:215px;box-sizing:border-box;border:1px solid #ccc;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;"><div style="line-height:0;"><img src="https://static.jp.mercari.com/assets/img/common/jp/logo_horizontal.png" width="105"></div><a href="https://jp.mercari.com/item/m42575975055?afid=2799704686" style="width:100px;height:100px;background:#eee;"}" target="_self"><img src="https://ambassador-system.mercari.com/v1/i?id=m42575975055&svc=m" style="line-height:0;width:100px;height:100px;object-fit:contain;"/></a><div style="padding:12px 0;width:100%;text-align:center;"><a href="https://jp.mercari.com/item/m42575975055?afid=2799704686" style="width:100px;height:32px;background-color:#E32B36;border-radius:4px;line-height:14px;text-align:center;color:#fff;font-weight:bold;border:0;font-size:12px;display:inline-flex;justify-content:center;align-items:center;" target="_self">今すぐ購入</a></div></div></p>
+出力例
+<div class="highlight"><pre><span></span><code>NAME    UUID                                  TYPE      DEVICE
+ens192  b7d983f9-769e-40a9-80ad-29879584ed9d  ethernet  ens192
+</code></pre></div>
+　　↑ens192を設定する</p>
+<h4 id="ip">IPアドレス設定</h4>
+<div class="highlight"><pre><span></span><code>nmcli c mod ens192 ipv4.method manual ipv4.addresses 192.168.0.50/24 connection.autoconnect yes
+</code></pre></div>
+<h4 id="_2">デフォルトゲートウェイ設定</h4>
+<div class="highlight"><pre><span></span><code>nmcli c mod ens192 ipv4.gateway 192.168.0.254
+</code></pre></div>
+<h4 id="dns">DNS 設定</h4>
+<div class="highlight"><pre><span></span><code>nmcli c mod ens192 +ipv4.dns 192.168.0.254
+</code></pre></div>
+<h4 id="_3">確認</h4>
+<p><div class="highlight"><pre><span></span><code>ip a
+</code></pre></div>
+出力例
+<div class="highlight"><pre><span></span><code>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: ens192: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:00:11:11:22:22 brd ff:ff:ff:ff:ff:ff
+    altname enp3s0
+    inet 192.168.0.50/24 brd 192.168.0.255 scope global noprefixroute ens160
+       valid_lft forever preferred_lft forever
+</code></pre></div></p>
+<h3 id="_4">参考</h3>
+<h3 id="_5">広告</h3>
+<p><a href="https://amzn.to/4bCA0Uz">Amazon.co.jp: Ubuntuサーバー徹底入門 eBook : 中島 能和: 本</a><br />
+<a href="https://jp.mercari.com/search?afid=2799704686&amp;category_id=674&amp;exclude_keyword=lpic&amp;keyword=linux&amp;status=on_sale">メルカリ：Linux　本</a>  </p>
+<div style="background:#fff;width:120px;height:215px;box-sizing:border-box;border:1px solid #ccc;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;"><div style="line-height:0;"><img src="https://static.jp.mercari.com/assets/img/common/jp/logo_horizontal.png" width="105"></div><a href="https://jp.mercari.com/item/m19283497483?afid=2799704686" style="width:100px;height:100px;background:#eee;"}" target="_self"><img src="https://ambassador-system.mercari.com/v1/i?id=m19283497483&svc=m" style="line-height:0;width:100px;height:100px;object-fit:contain;"/></a><div style="padding:12px 0;width:100%;text-align:center;"><a href="https://jp.mercari.com/item/m19283497483?afid=2799704686" style="width:100px;height:32px;background-color:#E32B36;border-radius:4px;line-height:14px;text-align:center;color:#fff;font-weight:bold;border:0;font-size:12px;display:inline-flex;justify-content:center;align-items:center;" target="_self">今すぐ購入</a></div></div>
 
               
             </article>
@@ -515,7 +613,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../zabbix-vmware/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ZABBIX構築 VMware版" rel="prev">
+        <a href="../ip-change-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IP変更 (netplan,ubuntu)" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -524,20 +622,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              ZABBIX構築 VMware版
+              IP変更 (netplan,ubuntu)
             </div>
           </div>
         </a>
       
       
         
-        <a href="../esxi-snmp/" class="md-footer__link md-footer__link--next" aria-label="Next: ESXi snmp 設定" rel="next">
+        <a href="../firewalld/" class="md-footer__link md-footer__link--next" aria-label="Next: firewalldメモ" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ESXi snmp 設定
+              firewalldメモ
             </div>
           </div>
           <div class="md-footer__button md-icon">
