@@ -21,6 +21,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://memo.ko-hei.net/esxi-powercli-1/</loc>
+         <lastmod>2024-02-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://memo.ko-hei.net/esxi-powercli-2/</loc>
+         <lastmod>2024-02-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://memo.ko-hei.net/esxi-powercli-3/</loc>
+         <lastmod>2024-02-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://memo.ko-hei.net/esxi-snmp/</loc>
          <lastmod>2024-02-18</lastmod>
          <changefreq>daily</changefreq>

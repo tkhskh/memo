@@ -1,0 +1,891 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://memo.ko-hei.net/esxi-powercli-1/">
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Windows Powershell へ PoserCLIインストール - memo blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-1LG4SKMYYW"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-1LG4SKMYYW",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LG4SKMYYW"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#windows-powershell-posercli" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://memo.ko-hei.net" title="memo blog" class="md-header__button md-logo" aria-label="memo blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            memo blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Windows Powershell へ PoserCLIインストール
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://memo.ko-hei.net" title="memo blog" class="md-nav__button md-logo" aria-label="memo blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    memo blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        index
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-change-1/" class="md-nav__link">
+        IP変更 (ip,ifconfig)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-change-2/" class="md-nav__link">
+        IP変更 (netplan,ubuntu)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-change-3/" class="md-nav__link">
+        IP変更 (nmcli)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firewalld/" class="md-nav__link">
+        firewalldメモ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raspi-co2/" class="md-nav__link">
+        ラズパイでCO2をはかる
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zabbix-vmware/" class="md-nav__link">
+        ZABBIX構築 VMware版
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-media-min/" class="md-nav__link">
+        ESXi OS領域を小さくインストールする
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-snmp/" class="md-nav__link">
+        ESXi snmp 設定
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-gui-timeout/" class="md-nav__link">
+        ESXi GUIログアウト時間延長
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Windows Powershell へ PoserCLIインストール
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Windows Powershell へ PoserCLIインストール
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    インストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ログ
+  </a>
+  
+    <nav class="md-nav" aria-label="ログ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    事前確認
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-powercli-2/" class="md-nav__link">
+        PowerCLI インストール (PowerShell)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-powercli-3/" class="md-nav__link">
+        PowerCLI インストール (docker)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        about
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    インストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ログ
+  </a>
+  
+    <nav class="md-nav" aria-label="ログ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    事前確認
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="windows-powershell-posercli">Windows Powershell へ PoserCLIインストール</h1>
+<h4 id="_1">インストール</h4>
+<div class="highlight"><pre><span></span><code>Install-Module Vmware.PowerCLI
+Get-ChildItem -Path  &#39;C:\Program Files\WindowsPowerShell\Modules&#39;  -Recurse | Unblock-File
+Set-ExecutionPolicy RemoteSigned
+</code></pre></div>
+<h3 id="_2">ログ</h3>
+<h4 id="_3">事前確認</h4>
+<div class="highlight"><pre><span></span><code>PS C:\WINDOWS\system32&gt; $PSVersionTable
+
+Name                           Value
+----                           -----
+PSVersion                      5.1.19041.3930
+PSEdition                      Desktop
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
+BuildVersion                   10.0.19041.3930
+CLRVersion                     4.0.30319.42000
+WSManStackVersion              3.0
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>Install-Module VMware.PowerCLI
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>PS C:\WINDOWS\system32&gt; Connect-VIServer -Server 192.168.0.100 -User Administrator@vsphere.local -Password &#39;xxxxxxxx&#39; -f
+
+Name                           Port  User
+----                           ----  ----
+192.168.0.100                 443   VSPHERE.LOCAL\Administrator
+
+
+PS C:\WINDOWS\system32&gt;
+</code></pre></div></p>
+<h3 id="_4">参考</h3>
+<p><a href="https://t-dilemma.info/vsphere-cmd-powercli/">https://t-dilemma.info/vsphere-cmd-powercli/</a><br />
+<a href="https://developer.vmware.com/docs/powercli/latest/products/vmwarevsphereandvsan/">https://developer.vmware.com/docs/powercli/latest/products/vmwarevsphereandvsan/</a><br />
+<a href="https://blogs.vmware.com/vmware-japan/2021/02/tam-blog-powercli-01.html">https://blogs.vmware.com/vmware-japan/2021/02/tam-blog-powercli-01.html</a>  </p>
+<p><div class="highlight"><pre><span></span><code>PS C:\WINDOWS\system32&gt; Install-Module VMware.PowerCLI
+
+信頼されていないリポジトリからモジュールをインストールしようとしています。このリポジトリを信頼する場合は、Set-PSReposit
+ory コマンドレットを実行して、リポジトリの InstallationPolicy の値を変更してください。&#39;PSGallery&#39;
+からモジュールをインストールしますか?
+[Y] はい(Y)  [A] すべて続行(A)  [N] いいえ(N)  [L] すべて無視(L)  [S] 中断(S)  [?] ヘルプ (既定値は &quot;N&quot;): A
+
+PS C:\WINDOWS\system32&gt; Get-ExecutionPolicy
+Restricted
+PS C:\WINDOWS\system32&gt; Import-Module VMware.VimAutomation.Core
+Import-Module : このシステムではスクリプトの実行が無効になっているため、ファイル C:\Program Files\WindowsPowerShell\Mod
+ules\VMware.VimAutomation.Sdk\13.2.0.22643730\VMware.VimAutomation.Sdk.psm1 を読み込むことができません。詳細については
+、「about_Execution_Policies」(https://go.microsoft.com/fwlink/?LinkID=135170) を参照してください。
+発生場所 行:1 文字:1
++ Import-Module VMware.VimAutomation.Core
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : セキュリティ エラー: (: ) [Import-Module]、PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess,Microsoft.PowerShell.Commands.ImportModuleCommand
+PS C:\WINDOWS\system32&gt; Get-ChildItem -Path  C:\Program Files\WindowsPowerShell\Mod
+Get-ChildItem : パス &#39;C:\Program&#39; が存在しないため検出できません。
+発生場所 行:1 文字:1
++ Get-ChildItem -Path  C:\Program Files\WindowsPowerShell\Mod
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Program:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+PS C:\WINDOWS\system32&gt; Get-ChildItem -Path  C:\Program Files\WindowsPowerShell\Modules
+Get-ChildItem : パス &#39;C:\Program&#39; が存在しないため検出できません。
+発生場所 行:1 文字:1
++ Get-ChildItem -Path  C:\Program Files\WindowsPowerShell\Modules
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Program:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+PS C:\WINDOWS\system32&gt; Get-ChildItem -Path  &#39;C:\Program Files\WindowsPowerShell\Modules&#39;
+
+
+    ディレクトリ: C:\Program Files\WindowsPowerShell\Modules
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2023/07/19     11:01                Microsoft.PowerShell.Operation.Validation
+d-----        2023/07/19     11:01                PackageManagement
+d-----        2023/07/19     11:01                Pester
+d-----        2023/07/19     11:01                PowerShellGet
+d-----        2023/07/19     11:01                PSReadline
+d-----        2024/01/23     13:22                VMware.CloudServices
+d-----        2024/01/23     13:23                VMware.DeployAutomation
+d-----        2024/01/23     13:23                VMware.ImageBuilder
+d-----        2024/01/23     13:33                VMware.PowerCLI
+d-----        2024/01/23     13:25                VMware.PowerCLI.Sdk
+d-----        2024/01/23     13:25                VMware.PowerCLI.Sdk.Types
+d-----        2024/01/23     13:25                VMware.PowerCLI.VCenter
+d-----        2024/01/23     13:25                VMware.PowerCLI.VCenter.Types.ApplianceService
+d-----        2024/01/23     13:25                VMware.PowerCLI.VCenter.Types.CertificateManagement
+d-----        2024/01/23     13:30                VMware.Sdk.Nsx.Policy
+d-----        2024/01/23     13:23                VMware.Sdk.Runtime
+d-----        2024/01/23     13:30                VMware.Sdk.Srm
+d-----        2024/01/23     13:32                VMware.Sdk.Vcf.CloudBuilder
+d-----        2024/01/23     13:33                VMware.Sdk.Vcf.SddcManager
+d-----        2024/01/23     13:30                VMware.Sdk.Vr
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Access
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Health
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.InfraProfile
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.LocalAccounts
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Logging
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Networking
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Recovery
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.SupportBundle
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.System
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Update
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Cis
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Cis.Tagging
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Content
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.ContentLibrary
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Esx.Hcl
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Esx.Hosts
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Esx.Settings
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.VAPI.Metadata
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Authentication
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Authorization
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.CertManagement
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.ConsumptionDomains
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Content
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Datastore
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Deployment
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Guest
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.HVC
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Identity
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Inventory
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.ISO
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.LCM
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.NamespaceManagement
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Namespaces
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.OVF
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Services
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Storage
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.SystemConfig
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.Tagging
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.Topology
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.TrustedInfrastructure
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.VCHA
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.Vm
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.VmTemplate
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vStats
+d-----        2024/01/23     13:23                VMware.Sdk.vSphereRuntime
+d-----        2024/01/23     13:22                VMware.Vim
+d-----        2024/01/23     13:22                VMware.VimAutomation.Cis.Core
+d-----        2024/01/23     13:23                VMware.VimAutomation.Cloud
+d-----        2024/01/23     13:22                VMware.VimAutomation.Common
+d-----        2024/01/23     13:22                VMware.VimAutomation.Core
+d-----        2024/01/23     13:23                VMware.VimAutomation.Hcx
+d-----        2024/01/23     13:23                VMware.VimAutomation.HorizonView
+d-----        2024/01/23     13:22                VMware.VimAutomation.License
+d-----        2024/01/23     13:23                VMware.VimAutomation.Nsxt
+d-----        2024/01/23     13:22                VMware.VimAutomation.Sdk
+d-----        2024/01/23     13:23                VMware.VimAutomation.Security
+d-----        2024/01/23     13:22                VMware.VimAutomation.Srm
+d-----        2024/01/23     13:22                VMware.VimAutomation.Storage
+d-----        2024/01/23     13:23                VMware.VimAutomation.StorageUtility
+d-----        2024/01/23     13:22                VMware.VimAutomation.Vds
+d-----        2024/01/23     13:22                VMware.VimAutomation.Vmc
+d-----        2024/01/23     13:23                VMware.VimAutomation.vROps
+d-----        2024/01/23     13:23                VMware.VimAutomation.WorkloadManagement
+d-----        2024/01/23     13:23                VMware.VumAutomation
+
+
+PS C:\WINDOWS\system32&gt; Get-ChildItem -Path  &#39;C:\Program Files\WindowsPowerShell\Modules&#39;  -Recurse | Unblock-File
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>PS C:\WINDOWS\system32&gt; Get-ChildItem -Path  &#39;C:\Program Files\WindowsPowerShell\Modules&#39;
+
+
+    ディレクトリ: C:\Program Files\WindowsPowerShell\Modules
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2023/07/19     11:01                Microsoft.PowerShell.Operation.Validation
+d-----        2023/07/19     11:01                PackageManagement
+d-----        2023/07/19     11:01                Pester
+d-----        2023/07/19     11:01                PowerShellGet
+d-----        2023/07/19     11:01                PSReadline
+d-----        2024/01/23     13:22                VMware.CloudServices
+d-----        2024/01/23     13:23                VMware.DeployAutomation
+d-----        2024/01/23     13:23                VMware.ImageBuilder
+d-----        2024/01/23     13:33                VMware.PowerCLI
+d-----        2024/01/23     13:25                VMware.PowerCLI.Sdk
+d-----        2024/01/23     13:25                VMware.PowerCLI.Sdk.Types
+d-----        2024/01/23     13:25                VMware.PowerCLI.VCenter
+d-----        2024/01/23     13:25                VMware.PowerCLI.VCenter.Types.ApplianceService
+d-----        2024/01/23     13:25                VMware.PowerCLI.VCenter.Types.CertificateManagement
+d-----        2024/01/23     13:30                VMware.Sdk.Nsx.Policy
+d-----        2024/01/23     13:23                VMware.Sdk.Runtime
+d-----        2024/01/23     13:30                VMware.Sdk.Srm
+d-----        2024/01/23     13:32                VMware.Sdk.Vcf.CloudBuilder
+d-----        2024/01/23     13:33                VMware.Sdk.Vcf.SddcManager
+d-----        2024/01/23     13:30                VMware.Sdk.Vr
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Access
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Health
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.InfraProfile
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.LocalAccounts
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Logging
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Networking
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Recovery
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.SupportBundle
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.System
+d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Update
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Cis
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Cis.Tagging
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Content
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.ContentLibrary
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Esx.Hcl
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Esx.Hosts
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Esx.Settings
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.VAPI.Metadata
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Authentication
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Authorization
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.CertManagement
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.ConsumptionDomains
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Content
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Datastore
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Deployment
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Guest
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.HVC
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Identity
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Inventory
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.ISO
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.LCM
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.NamespaceManagement
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Namespaces
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.OVF
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Services
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Storage
+d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.SystemConfig
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.Tagging
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.Topology
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.TrustedInfrastructure
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.VCHA
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.Vm
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.VmTemplate
+d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vStats
+d-----        2024/01/23     13:23                VMware.Sdk.vSphereRuntime
+d-----        2024/01/23     13:22                VMware.Vim
+d-----        2024/01/23     13:22                VMware.VimAutomation.Cis.Core
+d-----        2024/01/23     13:23                VMware.VimAutomation.Cloud
+d-----        2024/01/23     13:22                VMware.VimAutomation.Common
+d-----        2024/01/23     13:22                VMware.VimAutomation.Core
+d-----        2024/01/23     13:23                VMware.VimAutomation.Hcx
+d-----        2024/01/23     13:23                VMware.VimAutomation.HorizonView
+d-----        2024/01/23     13:22                VMware.VimAutomation.License
+d-----        2024/01/23     13:23                VMware.VimAutomation.Nsxt
+d-----        2024/01/23     13:22                VMware.VimAutomation.Sdk
+d-----        2024/01/23     13:23                VMware.VimAutomation.Security
+d-----        2024/01/23     13:22                VMware.VimAutomation.Srm
+d-----        2024/01/23     13:22                VMware.VimAutomation.Storage
+d-----        2024/01/23     13:23                VMware.VimAutomation.StorageUtility
+d-----        2024/01/23     13:22                VMware.VimAutomation.Vds
+d-----        2024/01/23     13:22                VMware.VimAutomation.Vmc
+d-----        2024/01/23     13:23                VMware.VimAutomation.vROps
+d-----        2024/01/23     13:23                VMware.VimAutomation.WorkloadManagement
+d-----        2024/01/23     13:23                VMware.VumAutomation
+</code></pre></div></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../esxi-gui-timeout/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ESXi GUIログアウト時間延長" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              ESXi GUIログアウト時間延長
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../esxi-powercli-2/" class="md-footer__link md-footer__link--next" aria-label="Next: PowerCLI インストール (PowerShell)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              PowerCLI インストール (PowerShell)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="../js/open-new-tab.js"></script>
+      
+    
+  </body>
+</html>

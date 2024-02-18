@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://memo.ko-hei.net/mkdocs/">
+        <link rel="canonical" href="https://memo.ko-hei.net/esxi-powercli-3/">
       
       <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
     
     
       
-        <title>Welcome to MkDocs - memo blog</title>
+        <title>PowerCLI インストール (docker) - memo blog</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#powercli-docker" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              PowerCLI インストール (docker)
             
           </span>
         </div>
@@ -368,21 +368,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../esxi-powercli-3/" class="md-nav__link">
-        PowerCLI インストール (docker)
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -395,12 +380,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Welcome to MkDocs
+          PowerCLI インストール (docker)
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Welcome to MkDocs
+        PowerCLI インストール (docker)
       </a>
       
         
@@ -419,16 +404,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#offical-documents" class="md-nav__link">
-    offical documents
+  <a href="#ubuntu-docker-powercli" class="md-nav__link">
+    Ubuntu への docker と PowerCLI のインストール
   </a>
   
-    <nav class="md-nav" aria-label="offical documents">
+    <nav class="md-nav" aria-label="Ubuntu への docker と PowerCLI のインストール">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-full-documentation-visit" class="md-nav__link">
-    For full documentation visit
+  <a href="#docker" class="md-nav__link">
+    docker インストール
+  </a>
+  
+    <nav class="md-nav" aria-label="docker インストール">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apt-install" class="md-nav__link">
+    apt install
   </a>
   
 </li>
@@ -437,32 +430,32 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#mkdocs-install" class="md-nav__link">
-    mkdocs install
+        
+          <li class="md-nav__item">
+  <a href="#powercli-install" class="md-nav__link">
+    PowerCLI install
   </a>
   
-    <nav class="md-nav" aria-label="mkdocs install">
+    <nav class="md-nav" aria-label="PowerCLI install">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pip" class="md-nav__link">
-    pip
+  <a href="#with-docker" class="md-nav__link">
+    with docker
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mkdocs-new" class="md-nav__link">
-    mkdocs new
+  <a href="#docker-pull" class="md-nav__link">
+    docker pull
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mkdocs-build" class="md-nav__link">
-    mkdocs build
+  <a href="#docker-run" class="md-nav__link">
+    docker run
   </a>
   
 </li>
@@ -471,18 +464,57 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+        
+          <li class="md-nav__item">
+  <a href="#powercli" class="md-nav__link">
+    PowerCLI確認
+  </a>
+  
+    <nav class="md-nav" aria-label="PowerCLI確認">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    バージョン
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+        
+          <li class="md-nav__item">
+  <a href="#vcenter" class="md-nav__link">
+    vCenter接続
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    動作確認
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    広告
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -490,6 +522,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        Welcome to MkDocs
+      </a>
     </li>
   
 
@@ -536,16 +583,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#offical-documents" class="md-nav__link">
-    offical documents
+  <a href="#ubuntu-docker-powercli" class="md-nav__link">
+    Ubuntu への docker と PowerCLI のインストール
   </a>
   
-    <nav class="md-nav" aria-label="offical documents">
+    <nav class="md-nav" aria-label="Ubuntu への docker と PowerCLI のインストール">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-full-documentation-visit" class="md-nav__link">
-    For full documentation visit
+  <a href="#docker" class="md-nav__link">
+    docker インストール
+  </a>
+  
+    <nav class="md-nav" aria-label="docker インストール">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apt-install" class="md-nav__link">
+    apt install
   </a>
   
 </li>
@@ -554,32 +609,32 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#mkdocs-install" class="md-nav__link">
-    mkdocs install
+        
+          <li class="md-nav__item">
+  <a href="#powercli-install" class="md-nav__link">
+    PowerCLI install
   </a>
   
-    <nav class="md-nav" aria-label="mkdocs install">
+    <nav class="md-nav" aria-label="PowerCLI install">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pip" class="md-nav__link">
-    pip
+  <a href="#with-docker" class="md-nav__link">
+    with docker
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mkdocs-new" class="md-nav__link">
-    mkdocs new
+  <a href="#docker-pull" class="md-nav__link">
+    docker pull
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mkdocs-build" class="md-nav__link">
-    mkdocs build
+  <a href="#docker-run" class="md-nav__link">
+    docker run
   </a>
   
 </li>
@@ -588,18 +643,57 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+        
+          <li class="md-nav__item">
+  <a href="#powercli" class="md-nav__link">
+    PowerCLI確認
+  </a>
+  
+    <nav class="md-nav" aria-label="PowerCLI確認">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    バージョン
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+        
+          <li class="md-nav__item">
+  <a href="#vcenter" class="md-nav__link">
+    vCenter接続
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    動作確認
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    広告
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -617,53 +711,127 @@
                 
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<h2 id="offical-documents">offical documents</h2>
-<h3 id="for-full-documentation-visit">For full documentation visit</h3>
-<p><a href="https://www.mkdocs.org">mkdocs.org</a>.<br />
-<a href="https://squidfunk.github.io/mkdocs-material/">mkdocs-material</a>.  </p>
-<h2 id="mkdocs-install">mkdocs install</h2>
-<h3 id="pip">pip</h3>
-<p><div class="highlight"><pre><span></span><code>pip install --upgrade pip
-pip install mkdocs
-pip install mkdocs-material
+<h1 id="powercli-docker">PowerCLI インストール (docker)</h1>
+<h2 id="ubuntu-docker-powercli">Ubuntu への docker と PowerCLI のインストール</h2>
+<h3 id="docker">docker インストール</h3>
+<h4 id="apt-install">apt install</h4>
+<div class="highlight"><pre><span></span><code>sudo apt install docker.io
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>pip freeze | grep mkdocs
-</code></pre></div></p>
-<h3 id="mkdocs-new">mkdocs new</h3>
-<p><div class="highlight"><pre><span></span><code>mkdocs new test
-ll
-cd test/
-ll
-vi mkdocs.yml
+<h3 id="powercli-install">PowerCLI install</h3>
+<h4 id="with-docker">with docker</h4>
+<p><div class="highlight"><pre><span></span><code>sudo su -
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>site_name: memo blog
+出力例
+<div class="highlight"><pre><span></span><code>root@ubuntu22:~# systemctl status containerd.service
+● containerd.service - containerd container runtime
+     Loaded: loaded (/lib/systemd/system/containerd.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2024-02-02 16:48:51 JST; 1min 5s ago
+       Docs: https://containerd.io
+   Main PID: 2615 (containerd)
+      Tasks: 10
+     Memory: 14.7M
+        CPU: 572ms
+     CGroup: /system.slice/containerd.service
+             mq2615 /usr/bin/containerd
 
-##Basic Configuration
-
-theme:
- name: material
- palette:
- primary: pink
+ 2月 02 16:48:51 ubuntu22 containerd[2615]: time=&quot;2024-02-02T16:48:51.511503688+09:00&quot; level=info m&gt;
+ 2月 02 16:48:51 ubuntu22 containerd[2615]: time=&quot;2024-02-02T16:48:51.511633595+09:00&quot; level=info m&gt;
+ 2月 02 16:48:51 ubuntu22 containerd[2615]: time=&quot;2024-02-02T16:48:51.511755423+09:00&quot; level=info m&gt;
+ 2月 02 16:48:51 ubuntu22 containerd[2615]: time=&quot;2024-02-02T16:48:51.511812952+09:00&quot; level=info m&gt;
+ 2月 02 16:48:51 ubuntu22 containerd[2615]: time=&quot;2024-02-02T16:48:51.511836373+09:00&quot; level=info m&gt;
+ 2月 02 16:48:51 ubuntu22 containerd[2615]: time=&quot;2024-02-02T16:48:51.511876160+09:00&quot; level=info m&gt;
+ 2月 02 16:48:51 ubuntu22 containerd[2615]: time=&quot;2024-02-02T16:48:51.511965293+09:00&quot; level=info m&gt;
+ 2月 02 16:48:51 ubuntu22 containerd[2615]: time=&quot;2024-02-02T16:48:51.512088658+09:00&quot; level=info m&gt;
+ 2月 02 16:48:51 ubuntu22 containerd[2615]: time=&quot;2024-02-02T16:48:51.512201855+09:00&quot; level=info m&gt;
+ 2月 02 16:48:51 ubuntu22 systemd[1]: Started containerd container runtime.
+root@ubuntu22:~#
 </code></pre></div></p>
-<h3 id="mkdocs-build">mkdocs build</h3>
-<div class="highlight"><pre><span></span><code>mkdocs build
-mkdocs serve
-mkdocs serve -a 192.168.10.10:8000
+<h4 id="docker-pull">docker pull</h4>
+<p><div class="highlight"><pre><span></span><code>docker pull vmware/powerclicore:latest
 </code></pre></div>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
+出力例
+<div class="highlight"><pre><span></span><code>root@ubuntu22:~# docker pull vmware/powerclicore:latest
+latest: Pulling from vmware/powerclicore
+ca1778b69356: Pull complete
+052498a0600e: Pull complete
+e4bb439630bb: Pull complete
+6c548366e47a: Pull complete
+21c27127fa53: Pull complete
+45ba8533c4dc: Pull complete
+149c0c565f74: Pull complete
+a4218067cd6b: Pull complete
+4d4343a21bed: Pull complete
+fa5ef76a57a5: Pull complete
+Digest: sha256:5d13398ec75c0c3858f2f68a598db4368f4c22a98d0d67ce926b181e420778d3
+Status: Downloaded newer image for vmware/powerclicore:latest
+docker.io/vmware/powerclicore:latest
+root@ubuntu22:~#
+</code></pre></div></p>
+<h4 id="docker-run">docker run</h4>
+<p><div class="highlight"><pre><span></span><code>docker run --rm -it vmware/powerclicore
+</code></pre></div>
+出力例
+<div class="highlight"><pre><span></span><code>root@ubuntu22:~# docker run --rm -it vmware/powerclicore
+PowerShell 7.2.11
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/powershell
+Type &#39;help&#39; to get help.
+
+PS /root&gt;
+</code></pre></div></p>
+<h3 id="powercli">PowerCLI確認</h3>
+<h4 id="_1">バージョン</h4>
+<p><div class="highlight"><pre><span></span><code>$PSVersionTable
+</code></pre></div>
+出力例
+<div class="highlight"><pre><span></span><code>PS /root&gt; $PSVersionTable
+
+Name                           Value
+----                           -----
+PSVersion                      7.2.11
+PSEdition                      Core
+GitCommitId                    7.2.11
+OS                             Linux 5.15.0-92-generic #102-Ubuntu SMP Wed Jan 10 09:33:48 UTC 2024
+Platform                       Unix
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1
+WSManStackVersion              3.0
+
+PS /root&gt;
+</code></pre></div></p>
+<h4 id="vcenter">vCenter接続</h4>
+<p><div class="highlight"><pre><span></span><code>Connect-VIServer -Server 192.168.0.100 -User Administrator@vsphere.local -Password &#39;xxxxxxxx&#39; -f
+</code></pre></div>
+出力例
+<div class="highlight"><pre><span></span><code>PS /root&gt; Connect-VIServer -Server 192.168.0.100 -User Administrator@vsphere.local -Password &#39;xxxxxxxx&#39; -f
+Name                           Port  User
+----                           ----  ----
+192.168.0.100                 443   VSPHERE.LOCAL\Administrator
+
+PS /root&gt;
+</code></pre></div></p>
+<h4 id="_2">動作確認</h4>
+<div class="highlight"><pre><span></span><code>PS /root&gt; Get-VM
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+ubuntu2204           PoweredOff 4        8.000
+ZABBIX               PoweredOn  4        4.000
+UBUNTU22             PoweredOn  4        8.000
+WinDev2311Eval       PoweredOff 4        8.000
+vCenter              PoweredOn  4        19.000
+K8S-00               PoweredOn  4        8.000
+JMETER-DESKTOP       PoweredOn  4        8.000
+JMETER               PoweredOff 4        8.000
+UBUNTU22-DESKTOP     PoweredOff 4        8.000
+
+PS /root&gt;
+</code></pre></div>
+<h3 id="_3">参考</h3>
+<p><a href="https://github.com/vmware/powerclicore">https://github.com/vmware/powerclicore</a></p>
+<h3 id="_4">広告</h3>
 
               
             </article>
@@ -677,7 +845,7 @@ docs/
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../esxi-powercli-3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PowerCLI インストール (docker)" rel="prev">
+        <a href="../esxi-powercli-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PowerCLI インストール (PowerShell)" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -686,20 +854,20 @@ docs/
               <span class="md-footer__direction">
                 Previous
               </span>
-              PowerCLI インストール (docker)
+              PowerCLI インストール (PowerShell)
             </div>
           </div>
         </a>
       
       
         
-        <a href="../about/" class="md-footer__link md-footer__link--next" aria-label="Next: about" rel="next">
+        <a href="../mkdocs/" class="md-footer__link md-footer__link--next" aria-label="Next: Welcome to MkDocs" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              about
+              Welcome to MkDocs
             </div>
           </div>
           <div class="md-footer__button md-icon">
