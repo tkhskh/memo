@@ -654,17 +654,17 @@ pwsh
 <p><div class="highlight"><pre><span></span><code>sudo dpkg -i powershell_7.4.1-1.deb_amd64.deb
 </code></pre></div>
 出力例
-<div class="highlight"><pre><span></span><code>e2serv@ubuntu22:~$ sudo dpkg -i powershell_7.4.1-1.deb_amd64.deb
+<div class="highlight"><pre><span></span><code>taka@ubuntu22:~$ sudo dpkg -i powershell_7.4.1-1.deb_amd64.deb
 以前に未選択のパッケージ powershell を選択しています。
 (データベースを読み込んでいます ... 現在 131064 個のファイルとディレクトリがインストールされています。)
 powershell_7.4.1-1.deb_amd64.deb を展開する準備をしています ...
 powershell (7.4.1-1.deb) を展開しています...
 powershell (7.4.1-1.deb) を設定しています ...
 man-db (2.10.2-1) のトリガを処理しています ...
-e2serv@ubuntu22:~$
-e2serv@ubuntu22:~$ pwsh
+taka@ubuntu22:~$
+taka@ubuntu22:~$ pwsh
 PowerShell 7.4.1
-PS /home/e2serv&gt;  $PSVersionTable
+PS /home/taka&gt;  $PSVersionTable
 
 Name                           Value
 ----                           -----
@@ -678,16 +678,16 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 WSManStackVersion              3.0
 
-PS /home/e2serv&gt;
+PS /home/taka&gt;
 </code></pre></div></p>
 <h4 id="powercli">PowerCLIインストール</h4>
 <p><div class="highlight"><pre><span></span><code>pwsh
 Install-Module Vmware.PowerCLI
 </code></pre></div>
 出力例
-<div class="highlight"><pre><span></span><code>e2serv@ubuntu22:~$ pwsh
+<div class="highlight"><pre><span></span><code>taka@ubuntu22:~$ pwsh
 PowerShell 7.4.1
-PS /home/e2serv&gt; Install-Module Vmware.PowerCLI
+PS /home/taka&gt; Install-Module Vmware.PowerCLI
 
 Untrusted repository
 You are installing the modules from an untrusted repository. If you trust this repository, change
@@ -697,34 +697,34 @@ install the modules from &#39;PSGallery&#39;?
 Installing package &#39;VMware.PowerCLI&#39; [Installing dependent package &#39;VMware.PowerCLI.Sdk.Types&#39;   ]
   Installing package &#39;VMware.PowerCLI.Sdk.Types&#39; [Unzipping                                      ]
 
-PS /home/e2serv&gt; 
+PS /home/taka&gt; 
 </code></pre></div></p>
 <h4 id="vcenter">vCenter接続確認</h4>
 <p><div class="highlight"><pre><span></span><code>Connect-VIServer -Server &lt;IP&gt; -User Administrator@vsphere.local -Password &#39;xxxxxxxx&#39; -f
 </code></pre></div>
 出力例
-<div class="highlight"><pre><span></span><code>PS /home/e2serv&gt; Connect-VIServer -Server 192.168.0.100 -User Administrator@vsphere.local -Password &#39;xxxxxxxx&#39; -f
+<div class="highlight"><pre><span></span><code>PS /home/taka&gt; Connect-VIServer -Server 192.168.0.100 -User Administrator@vsphere.local -Password &#39;xxxxxxxx&#39; -f
 
 Name                           Port  User
 ----                           ----  ----
 192.168.0.100                 443   VSPHERE.LOCAL\Administrator
 
-PS /home/e2serv&gt;
-PS /home/e2serv&gt;
-PS /home/e2serv&gt; Get-VM ubuntu2204 | Get-VMResourceConfiguration | select CpuLimitMhz
+PS /home/taka&gt;
+PS /home/taka&gt;
+PS /home/taka&gt; Get-VM ubuntu2204 | Get-VMResourceConfiguration | select CpuLimitMhz
 
 CpuLimitMhz
 -----------
 -1
 
-PS /home/e2serv&gt; (get-vm ubuntu,Windows | get-View)| select Name,{$_.Config.CpuAffinity.AffinitySet}
+PS /home/taka&gt; (get-vm ubuntu,Windows | get-View)| select Name,{$_.Config.CpuAffinity.AffinitySet}
 
 Name           $_.Config.CpuAffinity.AffinitySet
 ----           ---------------------------------
 ubuntu       {4, 5, 6, 7}
 windows      {4, 5, 6, 7}
 
-PS /home/e2serv&gt;
+PS /home/taka&gt;
 </code></pre></div></p>
 <h3 id="_2">参考</h3>
 <p><a href="https://learn.microsoft.com/ja-jp/powershell/scripting/install/install-ubuntu?view=powershell-7.4">https://learn.microsoft.com/ja-jp/powershell/scripting/install/install-ubuntu?view=powershell-7.4</a></p>
