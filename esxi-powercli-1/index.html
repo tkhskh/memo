@@ -409,6 +409,13 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     広告
   </a>
   
@@ -544,6 +551,13 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     広告
   </a>
   
@@ -608,128 +622,6 @@ ory コマンドレットを実行して、リポジトリの InstallationPolicy
 
 PS C:\WINDOWS\system32&gt; Get-ExecutionPolicy
 Restricted
-PS C:\WINDOWS\system32&gt; Import-Module VMware.VimAutomation.Core
-Import-Module : このシステムではスクリプトの実行が無効になっているため、ファイル C:\Program Files\WindowsPowerShell\Mod
-ules\VMware.VimAutomation.Sdk\13.2.0.22643730\VMware.VimAutomation.Sdk.psm1 を読み込むことができません。詳細については
-、「about_Execution_Policies」(https://go.microsoft.com/fwlink/?LinkID=135170) を参照してください。
-発生場所 行:1 文字:1
-+ Import-Module VMware.VimAutomation.Core
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : セキュリティ エラー: (: ) [Import-Module]、PSSecurityException
-    + FullyQualifiedErrorId : UnauthorizedAccess,Microsoft.PowerShell.Commands.ImportModuleCommand
-PS C:\WINDOWS\system32&gt; Get-ChildItem -Path  C:\Program Files\WindowsPowerShell\Mod
-Get-ChildItem : パス &#39;C:\Program&#39; が存在しないため検出できません。
-発生場所 行:1 文字:1
-+ Get-ChildItem -Path  C:\Program Files\WindowsPowerShell\Mod
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (C:\Program:String) [Get-ChildItem], ItemNotFoundException
-    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
-
-PS C:\WINDOWS\system32&gt; Get-ChildItem -Path  C:\Program Files\WindowsPowerShell\Modules
-Get-ChildItem : パス &#39;C:\Program&#39; が存在しないため検出できません。
-発生場所 行:1 文字:1
-+ Get-ChildItem -Path  C:\Program Files\WindowsPowerShell\Modules
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (C:\Program:String) [Get-ChildItem], ItemNotFoundException
-    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
-
-PS C:\WINDOWS\system32&gt; Get-ChildItem -Path  &#39;C:\Program Files\WindowsPowerShell\Modules&#39;
-
-
-    ディレクトリ: C:\Program Files\WindowsPowerShell\Modules
-
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d-----        2023/07/19     11:01                Microsoft.PowerShell.Operation.Validation
-d-----        2023/07/19     11:01                PackageManagement
-d-----        2023/07/19     11:01                Pester
-d-----        2023/07/19     11:01                PowerShellGet
-d-----        2023/07/19     11:01                PSReadline
-d-----        2024/01/23     13:22                VMware.CloudServices
-d-----        2024/01/23     13:23                VMware.DeployAutomation
-d-----        2024/01/23     13:23                VMware.ImageBuilder
-d-----        2024/01/23     13:33                VMware.PowerCLI
-d-----        2024/01/23     13:25                VMware.PowerCLI.Sdk
-d-----        2024/01/23     13:25                VMware.PowerCLI.Sdk.Types
-d-----        2024/01/23     13:25                VMware.PowerCLI.VCenter
-d-----        2024/01/23     13:25                VMware.PowerCLI.VCenter.Types.ApplianceService
-d-----        2024/01/23     13:25                VMware.PowerCLI.VCenter.Types.CertificateManagement
-d-----        2024/01/23     13:30                VMware.Sdk.Nsx.Policy
-d-----        2024/01/23     13:23                VMware.Sdk.Runtime
-d-----        2024/01/23     13:30                VMware.Sdk.Srm
-d-----        2024/01/23     13:32                VMware.Sdk.Vcf.CloudBuilder
-d-----        2024/01/23     13:33                VMware.Sdk.Vcf.SddcManager
-d-----        2024/01/23     13:30                VMware.Sdk.Vr
-d-----        2024/01/23     13:25                VMware.Sdk.vSphere
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Access
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Health
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.InfraProfile
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.LocalAccounts
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Logging
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Networking
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Recovery
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.SupportBundle
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.System
-d-----        2024/01/23     13:23                VMware.Sdk.vSphere.Appliance.Update
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Cis
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Cis.Tagging
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Content
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.ContentLibrary
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Esx.Hcl
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Esx.Hosts
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.Esx.Settings
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.VAPI.Metadata
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Authentication
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Authorization
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.CertManagement
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.ConsumptionDomains
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Content
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Datastore
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Deployment
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Guest
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.HVC
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Identity
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Inventory
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.ISO
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.LCM
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.NamespaceManagement
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Namespaces
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.OVF
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Services
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.Storage
-d-----        2024/01/23     13:24                VMware.Sdk.vSphere.vCenter.SystemConfig
-d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.Tagging
-d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.Topology
-d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.TrustedInfrastructure
-d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.VCHA
-d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.Vm
-d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vCenter.VmTemplate
-d-----        2024/01/23     13:25                VMware.Sdk.vSphere.vStats
-d-----        2024/01/23     13:23                VMware.Sdk.vSphereRuntime
-d-----        2024/01/23     13:22                VMware.Vim
-d-----        2024/01/23     13:22                VMware.VimAutomation.Cis.Core
-d-----        2024/01/23     13:23                VMware.VimAutomation.Cloud
-d-----        2024/01/23     13:22                VMware.VimAutomation.Common
-d-----        2024/01/23     13:22                VMware.VimAutomation.Core
-d-----        2024/01/23     13:23                VMware.VimAutomation.Hcx
-d-----        2024/01/23     13:23                VMware.VimAutomation.HorizonView
-d-----        2024/01/23     13:22                VMware.VimAutomation.License
-d-----        2024/01/23     13:23                VMware.VimAutomation.Nsxt
-d-----        2024/01/23     13:22                VMware.VimAutomation.Sdk
-d-----        2024/01/23     13:23                VMware.VimAutomation.Security
-d-----        2024/01/23     13:22                VMware.VimAutomation.Srm
-d-----        2024/01/23     13:22                VMware.VimAutomation.Storage
-d-----        2024/01/23     13:23                VMware.VimAutomation.StorageUtility
-d-----        2024/01/23     13:22                VMware.VimAutomation.Vds
-d-----        2024/01/23     13:22                VMware.VimAutomation.Vmc
-d-----        2024/01/23     13:23                VMware.VimAutomation.vROps
-d-----        2024/01/23     13:23                VMware.VimAutomation.WorkloadManagement
-d-----        2024/01/23     13:23                VMware.VumAutomation
-
-
 PS C:\WINDOWS\system32&gt; Get-ChildItem -Path  &#39;C:\Program Files\WindowsPowerShell\Modules&#39;  -Recurse | Unblock-File
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>PS C:\WINDOWS\system32&gt; Get-ChildItem -Path  &#39;C:\Program Files\WindowsPowerShell\Modules&#39;
@@ -828,7 +720,8 @@ d-----        2024/01/23     13:23                VMware.VimAutomation.vROps
 d-----        2024/01/23     13:23                VMware.VimAutomation.WorkloadManagement
 d-----        2024/01/23     13:23                VMware.VumAutomation
 </code></pre></div></p>
-<h3 id="_5">広告</h3>
+<h3 id="_5">参考</h3>
+<h3 id="_6">広告</h3>
 <p><a href="https://amzn.to/3wiEHCx">Amazon ： VMware vSphere7インテグレーションガイド</a><br />
 <a href="https://jp.mercari.com/search?afid=2799704686&amp;keyword=vSphere7+%E3%82%A4%E3%83%B3%E3%83%86%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89&amp;status=on_sale">メルカリ：vSphere7 インテグレーションガイド</a> <div style="background:#fff;width:120px;height:215px;box-sizing:border-box;border:1px solid #ccc;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;"><div style="line-height:0;"><img src="https://static.jp.mercari.com/assets/img/common/jp/logo_horizontal.png" width="105"></div><a href="https://jp.mercari.com/item/m42575975055?afid=2799704686" style="width:100px;height:100px;background:#eee;"}" target="_self"><img src="https://ambassador-system.mercari.com/v1/i?id=m42575975055&svc=m" style="line-height:0;width:100px;height:100px;object-fit:contain;"/></a><div style="padding:12px 0;width:100%;text-align:center;"><a href="https://jp.mercari.com/item/m42575975055?afid=2799704686" style="width:100px;height:32px;background-color:#E32B36;border-radius:4px;line-height:14px;text-align:center;color:#fff;font-weight:bold;border:0;font-size:12px;display:inline-flex;justify-content:center;align-items:center;" target="_self">今すぐ購入</a></div></div></p>
 
