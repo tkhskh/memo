@@ -2,77 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://memo.ko-hei.net/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/about/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/esxi-gui-timeout/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/esxi-media-min/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/esxi-powercli-1/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/esxi-powercli-2/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/esxi-powercli-3/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/esxi-snmp/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/firewalld/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/ip-change-1/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/ip-change-2/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/ip-change-3/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/mkdocs/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/raspi-co2/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://memo.ko-hei.net/zabbix-vmware/</loc>
-         <lastmod>2024-02-19</lastmod>
+         <lastmod>2024-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
