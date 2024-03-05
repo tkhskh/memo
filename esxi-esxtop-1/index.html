@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://memo.ko-hei.net/firewalld/">
+        <link rel="canonical" href="https://memo.ko-hei.net/esxi-esxtop-1/">
       
       <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
     
     
       
-        <title>firewalldメモ - memo blog</title>
+        <title>ESXi esxtop 基礎 - memo blog</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#firewalld" class="md-skip">
+        <a href="#esxi-esxtop" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              firewalldメモ
+              ESXi esxtop 基礎
             
           </span>
         </div>
@@ -246,175 +246,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          firewalldメモ
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../firewalld/" class="md-nav__link">
         firewalldメモ
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    確認
-  </a>
-  
-    <nav class="md-nav" aria-label="確認">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    状態確認
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    すべてのゾーン確認
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    特定のゾーンを確認
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    サービス名一覧
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    サービス名での確認
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    設定
-  </a>
-  
-    <nav class="md-nav" aria-label="設定">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    追加
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    ポート追加
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    削除
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    ポート削除
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    反映
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    特定のIPだけ許可(リッチルール)
-  </a>
-  
-    <nav class="md-nav" aria-label="特定のIPだけ許可(リッチルール)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    サービスをゾーンから削除
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ip_1" class="md-nav__link">
-    許可したIPポートを設定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    広告
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -530,11 +366,157 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../esxi-esxtop-1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ESXi esxtop 基礎
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ESXi esxtop 基礎
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    実行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h-help" class="md-nav__link">
+    h help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-vm-disk" class="md-nav__link">
+    v VM disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-vm-cpu" class="md-nav__link">
+    V VM cpu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p-power-mgmt" class="md-nav__link">
+    p power mgmt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    m
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n-network" class="md-nav__link">
+    n network
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-disk-adapter" class="md-nav__link">
+    d disk adapter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-disk-device" class="md-nav__link">
+    d disk device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-rdma-device" class="md-nav__link">
+    r rdma device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-interrupt" class="md-nav__link">
+    i interrupt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x-vsan" class="md-nav__link">
+    x vsan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    備考
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    広告
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -687,131 +669,113 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    確認
+    実行
   </a>
   
-    <nav class="md-nav" aria-label="確認">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h-help" class="md-nav__link">
+    h help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-vm-disk" class="md-nav__link">
+    v VM disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-vm-cpu" class="md-nav__link">
+    V VM cpu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p-power-mgmt" class="md-nav__link">
+    p power mgmt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    m
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n-network" class="md-nav__link">
+    n network
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-disk-adapter" class="md-nav__link">
+    d disk adapter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-disk-device" class="md-nav__link">
+    d disk device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-rdma-device" class="md-nav__link">
+    r rdma device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-interrupt" class="md-nav__link">
+    i interrupt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x-vsan" class="md-nav__link">
+    x vsan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    状態確認
+    備考
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    すべてのゾーン確認
+    参考
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    特定のゾーンを確認
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    サービス名一覧
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    サービス名での確認
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    設定
-  </a>
-  
-    <nav class="md-nav" aria-label="設定">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    追加
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    ポート追加
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    削除
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    ポート削除
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    反映
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    特定のIPだけ許可(リッチルール)
-  </a>
-  
-    <nav class="md-nav" aria-label="特定のIPだけ許可(リッチルール)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    サービスをゾーンから削除
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ip_1" class="md-nav__link">
-    許可したIPポートを設定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
     広告
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -829,54 +793,102 @@
                 
 
 
-<h1 id="firewalld">firewalldメモ</h1>
-<h2 id="_1">確認</h2>
-<h3 id="_2">状態確認</h3>
-<div class="highlight"><pre><span></span><code>firewall-cmd --state
+<h1 id="esxi-esxtop">ESXi esxtop 基礎</h1>
+<h3 id="_1">実行</h3>
+<div class="highlight"><pre><span></span><code>esxtop
 </code></pre></div>
-<h3 id="_3">すべてのゾーン確認</h3>
-<div class="highlight"><pre><span></span><code>firewall-cmd --list-all
+<h3 id="h-help">h help</h3>
+<div class="highlight"><pre><span></span><code>Switch display:
+        c:cpu           i:interrupt     m:memory        n:network
+        d:disk adapter  u:disk device   v:disk VM       p:power mgmt
+        r:rdma device
+        x:vsan
 </code></pre></div>
-<h3 id="_4">特定のゾーンを確認</h3>
-<div class="highlight"><pre><span></span><code>firewall-cmd --list-all --zone=ゾーン名
+<h3 id="v-vm-disk">v VM disk</h3>
+<div class="highlight"><pre><span></span><code>12:30:57pm up 10 days 16 min, 1372 worlds, 14 VMs, 204 vCPUs; CPU load average: 0.04, 0.03, 0.03
+
+        GID VMNAME           VDEVNAME NVDISK   CMDS/s  READS/s WRITES/s MBREAD/s MBWRTN/s LAT/rd LAT/wr
+      31037 ZABBIX648               -      1    12.55     0.00    12.55     0.00     0.12  0.000  0.066
+      32106 TrueNAS-S23             -      8    50.80     0.00    50.80     0.00     0.58  0.000  0.031
+      73726 PROMETHEUS              -      1     0.97     0.00     0.97     0.00     0.02  0.000  0.043
 </code></pre></div>
-<h3 id="_5">サービス名一覧</h3>
-<div class="highlight"><pre><span></span><code>firewall-cmd --get-services
+<h3 id="v-vm-cpu">V VM cpu</h3>
+<div class="highlight"><pre><span></span><code>12:31:29pm up 10 days 17 min, 1371 worlds, 14 VMs, 204 vCPUs; CPU load average: 0.03, 0.03, 0.03
+PCPU USED(%): 0.7 0.1 0.3 0.5 0.1 2.4 0.6 118 2.7 0.1 1.8 0.9 0.7 0.6 0.2 0.6 NUMA: 2.4 AVG: 2.4
+PCPU UTIL(%): 0.8 0.1 0.4 0.7 0.2 2.5 1.6  99 2.7 0.2 1.9 0.5 0.8 0.8 0.2 0.6 NUMA: 2.6 AVG: 2.6
+CORE UTIL(%): 0.2     0.9     2.7      99     3.1     2.3     0.8     0.8     NUMA: 5.8 AVG: 5.8
+
+         ID         GID NAME             NWLD   %USED    %RUN    %SYS   %WAIT %VMWAIT    %RDY   %IDLE  %OVRLP   %CSTP  %MLMTD  %SWPWT
+      89857       89857 ubuntu-docker      26    5.13    6.90    0.00 2600.00    4.99    0.41 1746.33    0.04    0.00    0.00    0.00
+      73740       73740 Miracle8           40    5.03    7.71    0.30 4000.00    0.00    0.40 3487.48    0.02    0.00    0.00    0.00
+     296587      296587 VMwareESXi8-1      40    4.90    7.18    0.18 4000.00    0.00    1.76 3586.38    0.04    0.00    0.00    0.00
 </code></pre></div>
-<h3 id="_6">サービス名での確認</h3>
-<div class="highlight"><pre><span></span><code>firewall-cmd --info-service=pop3
+<h3 id="c">c</h3>
+<div class="highlight"><pre><span></span><code>12:23:58pm up 5 days 13:36, 671 worlds, 0 VMs, 0 vCPUs; CPU load average: 0.00, 0.00, 0.00
+PCPU USED(%): 0.1 0.3 0.0 0.0 0.2 0.2 0.3 0.0  55 0.2 0.1 0.0 0.2 0.0 0.1 0.0 NUMA: 3.6 AVG: 3.6
+PCPU UTIL(%): 0.1 0.1 0.0 0.0 0.6 0.3 0.4 0.1  98 0.5 0.2 0.0 0.2 0.0 0.0 0.0 NUMA: 6.3 AVG: 6.3
+
+         ID         GID NAME             NWLD   %USED    %RUN    %SYS   %WAIT %VMWAIT    %RDY   %IDLE  %OVRLP   %CSTP  %MLMTD  %SWPWT
+     337279      337279 esxtop.578480       1   38.69   73.75    0.00    1.05       -    0.01    0.00    0.00    0.00    0.00    0.00
+          1           1 system            388    0.32 1036.63    0.00 25120.24       -   69.35    0.00    0.48    0.00    0.00    0.00
+     337162      337162 sshd.578467         1    0.09    0.38    0.00   74.05       -    0.02    0.00    0.00    0.00    0.00    0.00
 </code></pre></div>
-<h2 id="_7">設定</h2>
-<h3 id="_8">追加</h3>
-<p>firewall-cmd --zone=ゾーン名 --add-service=サービス名 -permanent<br />
-<div class="highlight"><pre><span></span><code>firewall-cmd --zone=public --add-service=pop3 --permanent 
-</code></pre></div></p>
-<h3 id="_9">ポート追加</h3>
-<div class="highlight"><pre><span></span><code>firewall-cmd --add-port=10000/tcp --zone=public --permanent
+<h3 id="p-power-mgmt">p power mgmt</h3>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<h3 id="_10">削除</h3>
-<p>firewall-cmd --zone=ゾーン名 --remove-service=サービス名 --permanent<br />
-<div class="highlight"><pre><span></span><code>firewall-cmd --zone=public --remove-service=pop3
-</code></pre></div></p>
-<h3 id="_11">ポート削除</h3>
-<div class="highlight"><pre><span></span><code>firewall-cmd --remove-port=10000/tcp --zone=public --permanent
+<h3 id="m">m</h3>
+<div class="highlight"><pre><span></span><code>12:25:00pm up 5 days 13:37, 671 worlds, 0 VMs, 0 vCPUs; MEM overcommit avg: 0.00, 0.00, 0.00
+PMEM  /MB: 32766   total: 381     vmk,1314 other, 31070 free
+VMKMEM/MB: 32604 managed:   940 minfree,  5106 rsvd,  27498 ursvd,  high state
+PSHARE/MB:      32  shared,      32  common:       0 saving
+SWAP  /MB:       0    curr,       0 rclmtgt:                 0.00 r/s,   0.00 w/s
+ZIP   /MB:       0  zipped,       0   saved
+MEMCTL/MB:       0    curr,       0  target,       0 max
+
+        GID NAME               MEMSZ    GRANT     CNSM    SZTGT     TCHD   TCHD_W    SWCUR    SWTGT   SWR/s   SWW/s  LLSWR/s  LLSWW/s   OVHDUW     OVHD  OVHDMAX
+      13814 hostd.526366      105.12    71.26    76.59    83.72    31.10    25.77     0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00     0.00
+      17469 vpxa.526791        33.77    19.65    24.49    26.45     8.14     3.30     0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00     0.00
+       1041 vmsyslogd.52455    26.04    14.14    15.07    16.49    10.29     9.35     0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00     0.00
 </code></pre></div>
-<h3 id="_12">反映</h3>
-<div class="highlight"><pre><span></span><code>firewall-cmd --reload
+<h3 id="n-network">n network</h3>
+<div class="highlight"><pre><span></span><code>12:25:20pm up 5 days 13:37, 671 worlds, 0 VMs, 0 vCPUs; CPU load average: 0.00, 0.00, 0.00
+
+   PORT-ID USED-BY                         TEAM-PNIC DNAME              PKTTX/s  MbTX/s   PSZTX    PKTRX/s  MbRX/s   PSZRX %DRPTX %DRPRX
+  67108867 Management                            n/a vSwitch0              0.00    0.00    0.00       0.00    0.00    0.00   0.00   0.00
+  67108869 Shadow of vmnic0                      n/a vSwitch0              0.00    0.00    0.00       0.00    0.00    0.00   0.00   0.00
+  67108870 vmk0                               vmnic0 vSwitch0            183.11    0.37  265.00     183.11    0.14   97.00   0.00   0.00
+2214592516 vmnic0                                  - vSwitch0            183.11    0.37  265.00     183.11    0.14   97.00   0.00   0.00
 </code></pre></div>
-<h2 id="ip">特定のIPだけ許可(リッチルール)</h2>
-<h3 id="_13">サービスをゾーンから削除</h3>
-<div class="highlight"><pre><span></span><code>firewall-cmd --permanent --remove-service=サービス名
+<h3 id="d-disk-adapter">d disk adapter</h3>
+<div class="highlight"><pre><span></span><code>12:27:54pm up 5 days 13:39, 671 worlds, 0 VMs, 0 vCPUs; CPU load average: 0.00, 0.00, 0.00
+
+ ADAPTR PATH                 NPTH   CMDS/s  READS/s WRITES/s MBREAD/s MBWRTN/s DAVG/cmd KAVG/cmd GAVG/cmd QAVG/cmd
+ vmhba0 -                       2     0.00     0.00     0.00     0.00     0.00     0.00     0.00     0.00     0.00
+ vmhba1 -                       1     0.00     0.00     0.00     0.00     0.00     0.00     0.00     0.00     0.00
+ vmhba2 -                       0     0.00     0.00     0.00     0.00     0.00     0.00     0.00     0.00     0.00
+vmhba64 -                       0     0.00     0.00     0.00     0.00     0.00     0.00     0.00     0.00     0.00
 </code></pre></div>
-<h3 id="ip_1">許可したIPポートを設定</h3>
-<p>firewall-cmd --permanent --zone=ゾーン名 --add-rich-rule="rule family="ipv4" source address="許可するIPアドレス" port protocol="tcp" port="ポート番号" accept"<br />
-<div class="highlight"><pre><span></span><code>firewall-cmd --permanent --zone=public --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;27.94.240.161/32&quot; port protocol=&quot;tcp&quot; port=&quot;2222&quot; accept&quot;
-</code></pre></div></p>
-<h3 id="_14">広告</h3>
-<p><a href="https://amzn.to/42FCq0n">Amazon.co.jp: 標準テキスト CentOS 8 構築・運用・管理パーフェクトガイド : Kindleストア</a><br />
-<a href="https://amzn.to/4bCA0Uz">Amazon.co.jp: Ubuntuサーバー徹底入門 eBook : 中島 能和: 本</a><br />
-<a href="https://jp.mercari.com/search?afid=2799704686&amp;category_id=674&amp;exclude_keyword=lpic&amp;keyword=linux&amp;status=on_sale">メルカリ：Linux　本</a>  </p>
-<div style="background:#fff;width:120px;height:215px;box-sizing:border-box;border:1px solid #ccc;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;"><div style="line-height:0;"><img src="https://static.jp.mercari.com/assets/img/common/jp/logo_horizontal.png" width="105"></div><a href="https://jp.mercari.com/item/m39373583785?afid=2799704686" style="width:100px;height:100px;background:#eee;"}" target="_self"><img src="https://ambassador-system.mercari.com/v1/i?id=m39373583785&svc=m" style="line-height:0;width:100px;height:100px;object-fit:contain;"/></a><div style="padding:12px 0;width:100%;text-align:center;"><a href="https://jp.mercari.com/item/m39373583785?afid=2799704686" style="width:100px;height:32px;background-color:#E32B36;border-radius:4px;line-height:14px;text-align:center;color:#fff;font-weight:bold;border:0;font-size:12px;display:inline-flex;justify-content:center;align-items:center;" target="_self">今すぐ購入</a></div></div>
+<h3 id="d-disk-device">d disk device</h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="r-rdma-device">r rdma device</h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="i-interrupt">i interrupt</h3>
+<div class="highlight"><pre><span></span><code>12:27:05pm up 5 days 13:39, 671 worlds, 0 VMs, 0 vCPUs; CPU load average: 0.00, 0.00, 0.00
+
+COOKIE  COUNT/s TIME/int COUNT_0  COUNT_1  COUNT_2  COUNT_3  COUNT_4  COUNT_5  COUNT_6  COUNT_7  COUNT_8  COUNT_9  COUNT_10 COUNT_11 COUNT_12 COUNT_13 COUNT_14 COUNT_15 D
+0x0         0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0 V
+0x1         0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0      0.0 V
+</code></pre></div>
+<h3 id="x-vsan">x vsan</h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="_2">備考</h3>
+<h3 id="_3">参考</h3>
+<h3 id="_4">広告</h3>
+<p><a href="https://amzn.to/3wiEHCx">Amazon ： VMware vSphere7インテグレーションガイド</a><br />
+<a href="https://jp.mercari.com/search?afid=2799704686&amp;keyword=vSphere7+%E3%82%A4%E3%83%B3%E3%83%86%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89&amp;status=on_sale">メルカリ：vSphere7 インテグレーションガイド</a> <div style="background:#fff;width:120px;height:215px;box-sizing:border-box;border:1px solid #ccc;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;"><div style="line-height:0;"><img src="https://static.jp.mercari.com/assets/img/common/jp/logo_horizontal.png" width="105"></div><a href="https://jp.mercari.com/item/m42575975055?afid=2799704686" style="width:100px;height:100px;background:#eee;"}" target="_self"><img src="https://ambassador-system.mercari.com/v1/i?id=m42575975055&svc=m" style="line-height:0;width:100px;height:100px;object-fit:contain;"/></a><div style="padding:12px 0;width:100%;text-align:center;"><a href="https://jp.mercari.com/item/m42575975055?afid=2799704686" style="width:100px;height:32px;background-color:#E32B36;border-radius:4px;line-height:14px;text-align:center;color:#fff;font-weight:bold;border:0;font-size:12px;display:inline-flex;justify-content:center;align-items:center;" target="_self">今すぐ購入</a></div></div> </p>
 
               
             </article>
@@ -890,7 +902,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ip-change-3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IP変更 (nmcli)" rel="prev">
+        <a href="../esxi-snmp-trap/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ESXi snmp trap 設定" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -899,20 +911,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              IP変更 (nmcli)
+              ESXi snmp trap 設定
             </div>
           </div>
         </a>
       
       
         
-        <a href="../raspi-co2/" class="md-footer__link md-footer__link--next" aria-label="Next: ラズパイでCO2をはかる" rel="next">
+        <a href="../esxi-esxtop-2/" class="md-footer__link md-footer__link--next" aria-label="Next: ESXi esxtop バッチ" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ラズパイでCO2をはかる
+              ESXi esxtop バッチ
             </div>
           </div>
           <div class="md-footer__button md-icon">
