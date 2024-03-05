@@ -76,6 +76,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://memo.ko-hei.net/tinkerforge-exporter/</loc>
+         <lastmod>2024-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://memo.ko-hei.net/zabbix-vmware/</loc>
          <lastmod>2024-03-05</lastmod>
          <changefreq>daily</changefreq>

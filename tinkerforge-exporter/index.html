@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://memo.ko-hei.net/ip-change-3/">
+        <link rel="canonical" href="https://memo.ko-hei.net/tinkerforge-exporter/">
       
       <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
     
     
       
-        <title>IP変更 (nmcli) - memo blog</title>
+        <title>tinkerforgeで温度をはかる - memo blog</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ip-nmcli" class="md-skip">
+        <a href="#tinkerforge" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IP変更 (nmcli)
+              tinkerforgeで温度をはかる
             
           </span>
         </div>
@@ -231,107 +231,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          IP変更 (nmcli)
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ip-change-3/" class="md-nav__link">
         IP変更 (nmcli)
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#nmcli" class="md-nav__link">
-    nmcli コマンド
-  </a>
-  
-    <nav class="md-nav" aria-label="nmcli コマンド">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    設定名確認
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    IPアドレス設定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    デフォルトゲートウェイ設定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
-    DNS 設定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    確認
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    参考
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    広告
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -372,11 +276,201 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../tinkerforge-exporter/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          tinkerforgeで温度をはかる
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         tinkerforgeで温度をはかる
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ラズパイに以下をインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    install
+  </a>
+  
+    <nav class="md-nav" aria-label="install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-exporter" class="md-nav__link">
+    node-exporter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinkerforge-brickd" class="md-nav__link">
+    tinkerforge brickd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinkerforge-shell-bindings" class="md-nav__link">
+    tinkerforge shell bindings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bc" class="md-nav__link">
+    bc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    スクリプト設置
+  </a>
+  
+    <nav class="md-nav" aria-label="スクリプト設置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    スクリプト作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    動作確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    以下に保存されていることを確認
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crontab" class="md-nav__link">
+    crontab
+  </a>
+  
+    <nav class="md-nav" aria-label="crontab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheus" class="md-nav__link">
+    prometheus 設定
+  </a>
+  
+    <nav class="md-nav" aria-label="prometheus 設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheusyaml" class="md-nav__link">
+    prometheus.yaml に追記する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    grafana 設定
+  </a>
+  
+    <nav class="md-nav" aria-label="grafana 設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafana-tinkerforgejson" class="md-nav__link">
+    grafana-tinkerforge.json をインポートする
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    広告
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -558,45 +652,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nmcli" class="md-nav__link">
-    nmcli コマンド
+  <a href="#_1" class="md-nav__link">
+    概要
   </a>
   
-    <nav class="md-nav" aria-label="nmcli コマンド">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ラズパイに以下をインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    install
+  </a>
+  
+    <nav class="md-nav" aria-label="install">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    設定名確認
+  <a href="#node-exporter" class="md-nav__link">
+    node-exporter
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    IPアドレス設定
+  <a href="#tinkerforge-brickd" class="md-nav__link">
+    tinkerforge brickd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    デフォルトゲートウェイ設定
+  <a href="#tinkerforge-shell-bindings" class="md-nav__link">
+    tinkerforge shell bindings
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
-    DNS 設定
+  <a href="#bc" class="md-nav__link">
+    bc
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    確認
+    スクリプト設置
   </a>
+  
+    <nav class="md-nav" aria-label="スクリプト設置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    スクリプト作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    動作確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    以下に保存されていることを確認
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -606,16 +741,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#crontab" class="md-nav__link">
+    crontab
+  </a>
+  
+    <nav class="md-nav" aria-label="crontab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheus" class="md-nav__link">
+    prometheus 設定
+  </a>
+  
+    <nav class="md-nav" aria-label="prometheus 設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheusyaml" class="md-nav__link">
+    prometheus.yaml に追記する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    grafana 設定
+  </a>
+  
+    <nav class="md-nav" aria-label="grafana 設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafana-tinkerforgejson" class="md-nav__link">
+    grafana-tinkerforge.json をインポートする
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     参考
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     広告
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -633,46 +821,170 @@
                 
 
 
-<h1 id="ip-nmcli">IP変更 (nmcli)</h1>
-<h3 id="nmcli">nmcli コマンド</h3>
-<h4 id="_1">設定名確認</h4>
-<p><div class="highlight"><pre><span></span><code>nmcli c
+<h1 id="tinkerforge">tinkerforgeで温度をはかる</h1>
+<h2 id="_1">概要</h2>
+<p>ラズパイにtinkerforgeセンサーを接続し、node-exporter でデータ取得する。  </p>
+<h2 id="_2">ラズパイに以下をインストール</h2>
+<p>node-exporter (text collecter)<br />
+tinkerforge brickd<br />
+tinkerforge shell bindings<br />
+bc  </p>
+<h2 id="install">install</h2>
+<h3 id="node-exporter">node-exporter</h3>
+<div class="highlight"><pre><span></span><code>apt install prometheus-node-exporter-collectors
 </code></pre></div>
-出力例
-<div class="highlight"><pre><span></span><code>NAME    UUID                                  TYPE      DEVICE
-ens192  b7d983f9-769e-40a9-80ad-29879584ed9d  ethernet  ens192
+<h3 id="tinkerforge-brickd">tinkerforge brickd</h3>
+<div class="highlight"><pre><span></span><code>wget https://download.tinkerforge.com/tools/brickd/linux/brickd_linux_latest_armhf.deb
+dpkg -i brickd_linux_latest_armhf.deb
 </code></pre></div>
-　　↑ens192を設定する</p>
-<h4 id="ip">IPアドレス設定</h4>
-<div class="highlight"><pre><span></span><code>nmcli c mod ens192 ipv4.method manual ipv4.addresses 192.168.0.50/24 connection.autoconnect yes
+<h3 id="tinkerforge-shell-bindings">tinkerforge shell bindings</h3>
+<div class="highlight"><pre><span></span><code>mkdir tinkerforge
+cd tinkerforge
+wget https://download.tinkerforge.com/bindings/shell/tinkerforge_shell_bindings_latest.zip
+unzip tinkerforge_shell_bindings_latest.zip
 </code></pre></div>
-<h4 id="_2">デフォルトゲートウェイ設定</h4>
-<div class="highlight"><pre><span></span><code>nmcli c mod ens192 ipv4.gateway 192.168.0.254
+<h3 id="bc">bc</h3>
+<div class="highlight"><pre><span></span><code>apt install bc
 </code></pre></div>
-<h4 id="dns">DNS 設定</h4>
-<div class="highlight"><pre><span></span><code>nmcli c mod ens192 +ipv4.dns 192.168.0.254
+<h3 id="_3">スクリプト設置</h3>
+<h4 id="_4">スクリプト作成</h4>
+<p><div class="highlight"><pre><span></span><code>vi get-tinkerforge.sh
 </code></pre></div>
-<h4 id="_3">確認</h4>
-<p><div class="highlight"><pre><span></span><code>ip a
-</code></pre></div>
-出力例
-<div class="highlight"><pre><span></span><code>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host
-       valid_lft forever preferred_lft forever
-2: ens192: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
-    link/ether 00:00:11:11:22:22 brd ff:ff:ff:ff:ff:ff
-    altname enp3s0
-    inet 192.168.0.50/24 brd 192.168.0.255 scope global noprefixroute ens160
-       valid_lft forever preferred_lft forever
+内容
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+
+TF_PATH=/root/tinkerforge
+TF_CALL=&quot;${TF_PATH}/tinkerforge call&quot;
+PRM_PATH=/var/lib/prometheus/node-exporter
+TMP_FILE=$PRM_PATH/tinkerforge.prom.tmp
+PRM_FILE=$PRM_PATH/tinkerforge.prom
+
+### target sensors ###
+air_quality_bricklet=&quot;&quot;
+temperature_bricklet=&quot;&quot;
+humidity_bricklet=&quot;&quot;
+ambient_light_v2_bricklet=&quot;&quot;
+dust_detector_bricklet=&quot;&quot;
+
+### start
+echo &quot;# tinkerfoge sensor values&quot; | tee $TMP_FILE
+
+### air-quality-bricklet ###
+if [[ $air_quality_bricklet = &quot;&quot; ]] ; then
+  echo &quot;air-quality-bricklet is n/a&quot;
+else
+  TFID=&quot;$air_quality_bricklet&quot;
+  #temperture
+  OUTPUT=`$TF_CALL air-quality-bricklet $TFID get-temperature`
+  ITEM=tinkerforge_`echo $OUTPUT | cut -d&quot;=&quot; -f1`
+  VALUE=`echo $OUTPUT | cut -d&quot;=&quot; -f2`
+  VALUE=`bc &lt;&lt;&lt; &quot;scale=2; $VALUE/100&quot;`
+  echo $ITEM $VALUE | tee -a $TMP_FILE
+
+  #humidity
+  OUTPUT=`$TF_CALL air-quality-bricklet $TFID get-humidity`
+  ITEM=tinkerforge_`echo $OUTPUT | cut -d&quot;=&quot; -f1`
+  VALUE=`echo $OUTPUT | cut -d&quot;=&quot; -f2`
+  VALUE=`bc &lt;&lt;&lt; &quot;scale=2; $VALUE/100&quot;`
+  echo $ITEM $VALUE | tee -a $TMP_FILE
+
+  #air-pressure
+  OUTPUT=`$TF_CALL air-quality-bricklet $TFID get-air-pressure`
+  #ITEM=tinkerforge_`echo $OUTPUT | cut -d&quot;=&quot; -f1`
+  ITEM=tinkerforge_air_pressure
+  VALUE=`echo $OUTPUT | cut -d&quot;=&quot; -f2`
+  VALUE=`bc &lt;&lt;&lt; &quot;scale=2; $VALUE/100&quot;`
+  echo $ITEM $VALUE | tee -a $TMP_FILE
+fi
+
+### temperature-bricklet ###
+if [[ $temperature_bricklet = &quot;&quot; ]] ; then
+  echo &quot;temperature-bricklet is n/a&quot;
+else
+  TFID=$temperature_bricklet
+  OUTPUT=`$TF_CALL temperature-bricklet $TFID get-temperature`
+  ITEM=tinkerforge_`echo $OUTPUT | cut -d&quot;=&quot; -f1`
+  VALUE=`echo $OUTPUT | cut -d&quot;=&quot; -f2`
+  VALUE=`bc &lt;&lt;&lt; &quot;scale=2; $VALUE/100&quot;`
+  echo $ITEM $VALUE | tee -a $TMP_FILE
+fi
+
+### humidity-bricklet ###
+if [[ $humidity_bricklet = &quot;&quot; ]] ; then
+  echo &quot;humidity-bricklet is n/a&quot;
+else
+  TFID=$humidity_bricklet
+  OUTPUT=`$TF_CALL humidity-bricklet $TFID get-humidity`
+  ITEM=tinkerforge_`echo $OUTPUT | cut -d&quot;=&quot; -f1`
+  VALUE=`echo $OUTPUT | cut -d&quot;=&quot; -f2`
+  VALUE=`bc &lt;&lt;&lt; &quot;scale=2; $VALUE/100&quot;`
+  echo $ITEM $VALUE | tee -a $TMP_FILE
+fi
+
+### ambient-light-v2-bricklet ###
+if [[ $ambient_light_v2_bricklet = &quot;&quot; ]] ; then
+  echo &quot;ambient-light-v2-bricklet is n/a&quot;
+else
+  TFID=$ambient_light_v2_bricklet
+  OUTPUT=`$TF_CALL ambient-light-v2-bricklet $TFID get-illuminance`
+  ITEM=tinkerforge_`echo $OUTPUT | cut -d&quot;=&quot; -f1`
+  VALUE=`echo $OUTPUT | cut -d&quot;=&quot; -f2`
+  VALUE=`bc &lt;&lt;&lt; &quot;scale=2; $VALUE/100&quot;`
+  echo $ITEM $VALUE | tee -a $TMP_FILE
+fi
+
+### dust-detector-bricklet ###
+if [[ $dust_detector_bricklet = &quot;&quot; ]] ; then
+  echo &quot;dust-detector-bricklet is n/a&quot;
+else
+  TFID=$dust_detector_bricklet
+  OUTPUT=`$TF_CALL dust-detector-bricklet $TFID get-dust-density`
+  ITEM=tinkerforge_dust_density
+  VALUE=`echo $OUTPUT | cut -d&quot;=&quot; -f2`
+  echo $ITEM $VALUE | tee -a $TMP_FILE
+fi
+
+mv $TMP_FILE $PRM_FILE
 </code></pre></div></p>
-<h3 id="_4">参考</h3>
-<h3 id="_5">広告</h3>
-<p><a href="https://amzn.to/4bCA0Uz">Amazon.co.jp: Ubuntuサーバー徹底入門 eBook : 中島 能和: 本</a><br />
-<a href="https://jp.mercari.com/search?keyword=linux&amp;status=on_sale&amp;exclude_keyword=lpic%20linuc&amp;category_id=674&amp;afid=2799704686">メルカリ：Linux　本</a></p>
-<div style="background:#fff;width:120px;height:215px;box-sizing:border-box;border:1px solid #ccc;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;"><div style="line-height:0;"><img src="https://static.jp.mercari.com/assets/img/common/jp/logo_horizontal.png" width="105"></div><a href="https://jp.mercari.com/item/m39373583785?afid=2799704686" style="width:100px;height:100px;background:#eee;"}" target="_self"><img src="https://ambassador-system.mercari.com/v1/i?id=m39373583785&svc=m" style="line-height:0;width:100px;height:100px;object-fit:contain;"/></a><div style="padding:12px 0;width:100%;text-align:center;"><a href="https://jp.mercari.com/item/m39373583785?afid=2799704686" style="width:100px;height:32px;background-color:#E32B36;border-radius:4px;line-height:14px;text-align:center;color:#fff;font-weight:bold;border:0;font-size:12px;display:inline-flex;justify-content:center;align-items:center;" target="_self">今すぐ購入</a></div></div>
+<h4 id="_5">動作確認</h4>
+<div class="highlight"><pre><span></span><code>chmod 755 get-tinkerforge.sh
+./get-tinkerforge.sh
+</code></pre></div>
+<h4 id="_6">以下に保存されていることを確認</h4>
+<p><div class="highlight"><pre><span></span><code>ls -l /var/lib/prometheus/node-exporter/
+cat /var/lib/prometheus/node-exporter/tinkerforge.prom
+</code></pre></div>
+出力例
+<div class="highlight"><pre><span></span><code>tinkerforge_temperature 23.31
+tinkerforge_humidity 36.57
+tinkerforge_air_pressure 1014.67
+tinkerforge_illuminance 61.47
+tinkerforge_dust_density 25
+</code></pre></div></p>
+<h2 id="crontab">crontab</h2>
+<p><div class="highlight"><pre><span></span><code>crontab -e
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>### tinkerforge-exporter ###
+* * * * * /root/tinkerforge/get-tinkerforge.sh
+</code></pre></div></p>
+<h3 id="prometheus">prometheus 設定</h3>
+<h4 id="prometheusyaml">prometheus.yaml に追記する</h4>
+<div class="highlight"><pre><span></span><code>  - job_name: node
+    # If prometheus-node-exporter is installed, grab stats about the local
+    # machine by default.
+    static_configs:
+    - targets:
+      - localhost:9100
+      - 192.168.0.50:9100 ★
+</code></pre></div>
+<h3 id="grafana">grafana 設定</h3>
+<h4 id="grafana-tinkerforgejson">grafana-tinkerforge.json をインポートする</h4>
+<h3 id="_7">参考</h3>
+<p><a href="https://github.com/tkhskh/tinkerforge-expoter">https://github.com/tkhskh/tinkerforge-expoter</a></p>
+<h3 id="_8">広告</h3>
+<p><a href="https://amzn.to/3uttD5c">Amazon.co.jp : 二酸化炭素センサー mh-z19</a><br />
+<a href="https://jp.mercari.com/search?afid=2799704686&amp;keyword=%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4">メルカリ：ラズパイ</a>  </p>
+<div style="background:#fff;width:120px;height:215px;box-sizing:border-box;border:1px solid #ccc;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;"><div style="line-height:0;"><img src="https://static.jp.mercari.com/assets/img/common/jp/logo_horizontal.png" width="105"></div><a href="https://jp.mercari.com/item/m38687642747?afid=2799704686" style="width:100px;height:100px;background:#eee;"}" target="_self"><img src="https://ambassador-system.mercari.com/v1/i?id=m38687642747&svc=m" style="line-height:0;width:100px;height:100px;object-fit:contain;"/></a><div style="padding:12px 0;width:100%;text-align:center;"><a href="https://jp.mercari.com/item/m38687642747?afid=2799704686" style="width:100px;height:32px;background-color:#E32B36;border-radius:4px;line-height:14px;text-align:center;color:#fff;font-weight:bold;border:0;font-size:12px;display:inline-flex;justify-content:center;align-items:center;" target="_self">今すぐ購入</a></div></div>
 
               
             </article>
@@ -686,7 +998,7 @@ ens192  b7d983f9-769e-40a9-80ad-29879584ed9d  ethernet  ens192
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ip-change-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IP変更 (netplan,ubuntu)" rel="prev">
+        <a href="../raspi-co2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ラズパイでCO2をはかる" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -695,20 +1007,20 @@ ens192  b7d983f9-769e-40a9-80ad-29879584ed9d  ethernet  ens192
               <span class="md-footer__direction">
                 Previous
               </span>
-              IP変更 (netplan,ubuntu)
+              ラズパイでCO2をはかる
             </div>
           </div>
         </a>
       
       
         
-        <a href="../firewalld/" class="md-footer__link md-footer__link--next" aria-label="Next: firewalldメモ" rel="next">
+        <a href="../zabbix-vmware/" class="md-footer__link md-footer__link--next" aria-label="Next: ZABBIX構築 VMware版" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              firewalldメモ
+              ZABBIX構築 VMware版
             </div>
           </div>
           <div class="md-footer__button md-icon">
