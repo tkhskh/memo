@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://memo.ko-hei.net/esxi-snmp-trap/</loc>
+         <lastmod>2024-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://memo.ko-hei.net/esxi-snmp/</loc>
          <lastmod>2024-03-05</lastmod>
          <changefreq>daily</changefreq>
