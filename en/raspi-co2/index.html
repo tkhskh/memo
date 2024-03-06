@@ -1,0 +1,1287 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://memo.ko-hei.net/en/raspi-co2/">
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>ラズパイでCO2をはかる - memo blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-1LG4SKMYYW"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-1LG4SKMYYW",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LG4SKMYYW"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#co2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://memo.ko-hei.net" title="memo blog" class="md-header__button md-logo" aria-label="memo blog" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            memo blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ラズパイでCO2をはかる
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../raspi-co2/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://memo.ko-hei.net" title="memo blog" class="md-nav__button md-logo" aria-label="memo blog" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    memo blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Linux</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-change-1/" class="md-nav__link">
+        IP変更 (ip,ifconfig)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-change-2/" class="md-nav__link">
+        IP変更 (netplan,ubuntu)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-change-3/" class="md-nav__link">
+        IP変更 (nmcli)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firewalld/" class="md-nav__link">
+        firewalldメモ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ラズパイでCO2をはかる
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ラズパイでCO2をはかる
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+    <nav class="md-nav" aria-label="概要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ラズパイ設定
+  </a>
+  
+    <nav class="md-nav" aria-label="ラズパイ設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    シリアル設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    再起動
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip-install" class="md-nav__link">
+    pip install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#co2-mh_z19" class="md-nav__link">
+    CO2センサー mh_z19接続
+  </a>
+  
+    <nav class="md-nav" aria-label="CO2センサー mh_z19接続">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    二酸化炭素がとれる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    温度もとれるっぽい
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-exporter" class="md-nav__link">
+    node-exporter インストール
+  </a>
+  
+    <nav class="md-nav" aria-label="node-exporter インストール">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-collect-prometheus-node-exporter-collectors-apt-install" class="md-nav__link">
+    text collect を使うので prometheus-node-exporter-collectors を apt install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-exporter_1" class="md-nav__link">
+    node-exporter で読み込むテキストデータの場所
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    スクリプト設置
+  </a>
+  
+    <nav class="md-nav" aria-label="スクリプト設置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    スクリプト作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    動作確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    以下に保存されていることを確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crontab" class="md-nav__link">
+    crontab
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prometheus" class="md-nav__link">
+    prometheus 設定
+  </a>
+  
+    <nav class="md-nav" aria-label="prometheus 設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheusyaml" class="md-nav__link">
+    prometheus.yaml に追記する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    grafana 設定
+  </a>
+  
+    <nav class="md-nav" aria-label="grafana 設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafana-co2json" class="md-nav__link">
+    grafana-co2.json をインポートする
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    広告
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tinkerforge-exporter/" class="md-nav__link">
+        tinkerforgeで温度をはかる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zabbix-vmware/" class="md-nav__link">
+        ZABBIX構築 VMware版
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          ESXi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ESXi" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          ESXi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-media-min/" class="md-nav__link">
+        ESXi OS領域を小さくインストールする
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-cpuList/" class="md-nav__link">
+        ESXi のCPUを確認する
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-snmp/" class="md-nav__link">
+        ESXi snmp 設定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-snmp-trap/" class="md-nav__link">
+        ESXi snmp trap 設定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-esxtop-1/" class="md-nav__link">
+        ESXi esxtop 基礎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-esxtop-2/" class="md-nav__link">
+        ESXi esxtop バッチ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-esxtop-3/" class="md-nav__link">
+        ESXi esxtop ツール
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-gui-timeout/" class="md-nav__link">
+        ESXi GUIログアウト時間延長
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-powercli-1/" class="md-nav__link">
+        Windows Powershell へ PoserCLIインストール
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-powercli-2/" class="md-nav__link">
+        PowerCLI インストール (PowerShell)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esxi-powercli-3/" class="md-nav__link">
+        PowerCLI インストール (docker)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        about
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+    <nav class="md-nav" aria-label="概要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ラズパイ設定
+  </a>
+  
+    <nav class="md-nav" aria-label="ラズパイ設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    シリアル設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    再起動
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip-install" class="md-nav__link">
+    pip install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#co2-mh_z19" class="md-nav__link">
+    CO2センサー mh_z19接続
+  </a>
+  
+    <nav class="md-nav" aria-label="CO2センサー mh_z19接続">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    二酸化炭素がとれる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    温度もとれるっぽい
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-exporter" class="md-nav__link">
+    node-exporter インストール
+  </a>
+  
+    <nav class="md-nav" aria-label="node-exporter インストール">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-collect-prometheus-node-exporter-collectors-apt-install" class="md-nav__link">
+    text collect を使うので prometheus-node-exporter-collectors を apt install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-exporter_1" class="md-nav__link">
+    node-exporter で読み込むテキストデータの場所
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    スクリプト設置
+  </a>
+  
+    <nav class="md-nav" aria-label="スクリプト設置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    スクリプト作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    動作確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    以下に保存されていることを確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crontab" class="md-nav__link">
+    crontab
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prometheus" class="md-nav__link">
+    prometheus 設定
+  </a>
+  
+    <nav class="md-nav" aria-label="prometheus 設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheusyaml" class="md-nav__link">
+    prometheus.yaml に追記する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    grafana 設定
+  </a>
+  
+    <nav class="md-nav" aria-label="grafana 設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafana-co2json" class="md-nav__link">
+    grafana-co2.json をインポートする
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    広告
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="co2">ラズパイでCO2をはかる</h1>
+<h2 id="_1">概要</h2>
+<p>ラズパイにCO2センサー mh_z19 で二酸化炭素を測定し、node-exporter でデータ取得し、prometheusでグラフ化する。<br />
+<img alt="グラフ" src="../img/raspi-grafana.jpg" /><br />
+<img alt="mh_z19図" src="../img/mh_z19.jpg" />  </p>
+<h3 id="_2">ラズパイ設定</h3>
+<h4 id="_3">シリアル設定</h4>
+<p>rootで作業
+<div class="highlight"><pre><span></span><code>sudo su -
+raspi-config
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>3 Interface Options
+
+　I1 SSH         Enable/disable remote command line access using SSH   
+  I2 VNC         Enable/disable graphical remote desktop access        
+  I3 SPI         Enable/disable automatic loading of SPI kernel module 
+  I4 I2C         Enable/disable automatic loading of I2C kernel module 
+<span class="hll">☆I5 Serial Port Enable/disable shell messages on the serial connection
+</span>  I6 1-Wire      Enable/disable one-wire interface                     
+  I7 Remote GPIO Enable/disable remote access to GPIO pins             
+</code></pre></div>
+Would you like a login shell to be accessible over serial? で「いいえ」を選択する<br />
+Would you like the serial port hardware to be enabled? で「はい」を選択する  </p>
+<h4 id="_4">再起動</h4>
+<div class="highlight"><pre><span></span><code>reboot
+</code></pre></div>
+<h4 id="pip-install">pip install</h4>
+<div class="highlight"><pre><span></span><code>sudo su -
+apt update
+apt upgrade
+apt install python3-pip
+pip3 install --break-system-packages --user mh_z19
+python -m mh_z19
+</code></pre></div>
+<h3 id="co2-mh_z19">CO2センサー mh_z19接続</h3>
+<p><img alt="mh_z19図" src="../img/mh_z19.jpg" /><br />
+<img alt="接続図" src="../img/raspi-co2.jpg" />  </p>
+<h4 id="_5">二酸化炭素がとれる</h4>
+<div class="highlight"><pre><span></span><code>root@raspberrypi:~# python -m mh_z19
+{&quot;co2&quot;: 593}
+root@raspberrypi:~#
+</code></pre></div>
+<h4 id="_6">温度もとれるっぽい</h4>
+<div class="highlight"><pre><span></span><code>root@raspberrypi:~# python -m mh_z19 --all
+{&quot;co2&quot;: 402, &quot;temperature&quot;: 26, &quot;TT&quot;: 66, &quot;SS&quot;: 0, &quot;UhUl&quot;: 13568}
+root@raspberrypi:~#
+</code></pre></div>
+<h3 id="node-exporter">node-exporter インストール</h3>
+<h4 id="text-collect-prometheus-node-exporter-collectors-apt-install">text collect を使うので prometheus-node-exporter-collectors を apt install</h4>
+<div class="highlight"><pre><span></span><code>apt install prometheus-node-exporter-collectors
+</code></pre></div>
+<h4 id="node-exporter_1">node-exporter で読み込むテキストデータの場所</h4>
+<div class="highlight"><pre><span></span><code>ls -l /var/lib/prometheus/node-exporter/
+</code></pre></div>
+<h3 id="_7">スクリプト設置</h3>
+<h4 id="_8">スクリプト作成</h4>
+<p><div class="highlight"><pre><span></span><code>vi collect-co2.sh
+</code></pre></div>
+内容
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+
+### file path ###
+PRM_PATH=/var/lib/prometheus/node-exporter
+TMP_FILE=${PRM_PATH}/mh_z19.prom.tmp
+PRM_FILE=${PRM_PATH}/mh_z19.prom
+
+### collect co2 value ###
+i=0
+while [ $i -le 10 ]
+do
+  sleep 1
+  VALUE=`python -m mh_z19 | jq .[]`
+  if [ -z $VALUE ]; then
+    ((i++))
+    echo &quot;co2 value is null. retry $i&quot;
+  else
+    echo &quot;co2 value is $VALUE&quot;
+    break
+  fi
+done
+
+### put prom file ###
+echo &quot;mh_z19_co2 $VALUE&quot; &gt; $TMP_FILE
+echo &quot;mh_z19_co2_retry $i&quot; &gt;&gt; $TMP_FILE
+mv $TMP_FILE $PRM_FILE
+exit
+</code></pre></div></p>
+<h4 id="_9">動作確認</h4>
+<div class="highlight"><pre><span></span><code>chmod 755 collect-co2.sh
+./collect-co2.sh
+</code></pre></div>
+<h4 id="_10">以下に保存されていることを確認</h4>
+<p><div class="highlight"><pre><span></span><code>ls -l /var/lib/prometheus/node-exporter/
+cat /var/lib/prometheus/node-exporter/mh_z19.prom
+</code></pre></div>
+出力例
+<div class="highlight"><pre><span></span><code>mh_z19_co2 713
+mh_z19_co2_retry 0
+</code></pre></div></p>
+<h4 id="crontab">crontab</h4>
+<p><div class="highlight"><pre><span></span><code>crontab -e
+</code></pre></div>
+追加する
+<div class="highlight"><pre><span></span><code>### raspi-co2-exporter ###
+* * * * * /root/collect-co2.sh
+</code></pre></div></p>
+<h3 id="prometheus">prometheus 設定</h3>
+<h4 id="prometheusyaml">prometheus.yaml に追記する</h4>
+<div class="highlight"><pre><span></span><code>  - job_name: node
+    # If prometheus-node-exporter is installed, grab stats about the local
+    # machine by default.
+    static_configs:
+    - targets:
+      - localhost:9100
+      - 192.168.0.50:9100 ★
+</code></pre></div>
+<h3 id="grafana">grafana 設定</h3>
+<h4 id="grafana-co2json">grafana-co2.json をインポートする</h4>
+<h3 id="_11">参考</h3>
+<p><a href="https://github.com/UedaTakeyuki/mh-z19">https://github.com/UedaTakeyuki/mh-z19</a></p>
+<h3 id="_12">広告</h3>
+<p><a href="https://amzn.to/3uttD5c">Amazon.co.jp : 二酸化炭素センサー mh-z19</a><br />
+<a href="https://jp.mercari.com/search?afid=2799704686&amp;keyword=%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4">メルカリ：ラズパイ</a>  </p>
+<div style="background:#fff;width:120px;height:215px;box-sizing:border-box;border:1px solid #ccc;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;"><div style="line-height:0;"><img src="https://static.jp.mercari.com/assets/img/common/jp/logo_horizontal.png" width="105"></div><a href="https://jp.mercari.com/item/m38687642747?afid=2799704686" style="width:100px;height:100px;background:#eee;"}" target="_self"><img src="https://ambassador-system.mercari.com/v1/i?id=m38687642747&svc=m" style="line-height:0;width:100px;height:100px;object-fit:contain;"/></a><div style="padding:12px 0;width:100%;text-align:center;"><a href="https://jp.mercari.com/item/m38687642747?afid=2799704686" style="width:100px;height:32px;background-color:#E32B36;border-radius:4px;line-height:14px;text-align:center;color:#fff;font-weight:bold;border:0;font-size:12px;display:inline-flex;justify-content:center;align-items:center;" target="_self">今すぐ購入</a></div></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../firewalld/" class="md-footer__link md-footer__link--prev" aria-label="Previous: firewalldメモ" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              firewalldメモ
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../tinkerforge-exporter/" class="md-footer__link md-footer__link--next" aria-label="Next: tinkerforgeで温度をはかる" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              tinkerforgeで温度をはかる
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 memo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.sections"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="../../js/open-new-tab.js"></script>
+      
+    
+  </body>
+</html>
